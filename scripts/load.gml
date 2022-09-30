@@ -20,7 +20,7 @@ sprite_change_offset("parry", 32, 62);
 sprite_change_offset("roll_forward", 32, 62);
 sprite_change_offset("roll_backward", 32, 62);
 sprite_change_offset("airdodge", 32, 62);
-sprite_change_offset("waveland", 32, 62);
+sprite_change_offset("waveland", 48, 92);
 sprite_change_offset("tech", 32, 62);
 
 sprite_change_offset("dattack_hitfx", 100, 100);

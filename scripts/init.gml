@@ -23,11 +23,11 @@ dash_stop_percent = .35; //the value to multiply your hsp by when going into idl
 ground_friction = .6;
 moonwalk_accel = 1.4;
 
-djump_accel = -2.6;
+djump_accel = -2.3;
 djump_accel_start_time = 4;
 djump_accel_end_time = 10;
 jump_start_time = 5;
-jump_speed = 10;
+jump_speed = 8.75;
 short_hop_speed = 5.5;
 djump_speed = -0.6;
 leave_ground_max = 7.5; //the maximum hsp you can have when you go from grounded to aerial without jumping
@@ -44,7 +44,7 @@ walljump_vsp = 10;
 walljump_time = 32;
 max_fall = 9; //maximum fall speed without fastfalling
 fast_fall = 12; //fast fall speed
-gravity_speed = .4;
+gravity_speed = .325;
 hitstun_grav = .45;
 knockback_adj = 1.15; //the multiplier to KB dealt to you. 1 = default, >1 = lighter, <1 = heavier
 

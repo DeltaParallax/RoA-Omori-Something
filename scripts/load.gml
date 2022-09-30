@@ -28,7 +28,7 @@ sprite_change_offset("dattack_hitfx", 100, 100);
 sprite_change_offset("jab", 64, 94);
 sprite_change_offset("dattack", 66, 94);
 sprite_change_offset("ftilt", 54, 98);
-sprite_change_offset("dtilt", 64, 94);
+sprite_change_offset("dtilt", 50, 66);
 sprite_change_offset("utilt", 70, 108);
 sprite_change_offset("nair", 64, 94);
 sprite_change_offset("fair", 64, 94);

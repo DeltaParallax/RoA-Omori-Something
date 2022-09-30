@@ -49,7 +49,7 @@ set_hitbox_value(AT_FSTRONG, 1, HG_BASE_KNOCKBACK, 9);
 set_hitbox_value(AT_FSTRONG, 1, HG_KNOCKBACK_SCALING, 1);
 set_hitbox_value(AT_FSTRONG, 1, HG_BASE_HITPAUSE, 9);
 set_hitbox_value(AT_FSTRONG, 1, HG_HITPAUSE_SCALING, 1);
-set_hitbox_value(AT_FSTRONG, 1, HG_HIT_SFX, asset_get("sfx_blow_heavy2"));
+set_hitbox_value(AT_FSTRONG, 1, HG_HIT_SFX, sound_get("sfx_critical_hit"));
 set_hitbox_value(AT_FSTRONG, 1, HG_VISUAL_EFFECT, vfx_dattack_sweet);
 
 set_hitbox_value(AT_FSTRONG, 2, HG_HITBOX_TYPE, 1);

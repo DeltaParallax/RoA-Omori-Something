@@ -18,7 +18,7 @@ set_window_value(AT_JAB, 3, AG_WINDOW_TYPE, 1);
 set_window_value(AT_JAB, 3, AG_WINDOW_LENGTH, 12);
 set_window_value(AT_JAB, 3, AG_WINDOW_ANIM_FRAMES, 4);
 set_window_value(AT_JAB, 3, AG_WINDOW_ANIM_FRAME_START, 3);
-set_window_value(AT_JAB, 3, AG_WINDOW_CANCEL_FRAME, 2);
+set_window_value(AT_JAB, 3, AG_WINDOW_CANCEL_FRAME, 4);
 set_window_value(AT_JAB, 3, AG_WINDOW_CANCEL_TYPE, 1);
 
 set_window_value(AT_JAB, 4, AG_WINDOW_TYPE, 1);
@@ -50,16 +50,17 @@ set_hitbox_value(AT_JAB, 1, HG_WIDTH, 70);
 set_hitbox_value(AT_JAB, 1, HG_HEIGHT, 45);
 set_hitbox_value(AT_JAB, 1, HG_PRIORITY, 2);
 set_hitbox_value(AT_JAB, 1, HG_DAMAGE, 4);
-set_hitbox_value(AT_JAB, 1, HG_ANGLE, 45);
+set_hitbox_value(AT_JAB, 1, HG_ANGLE, 50);
 set_hitbox_value(AT_JAB, 1, HG_BASE_KNOCKBACK, 4);
 set_hitbox_value(AT_JAB, 1, HG_BASE_HITPAUSE, 5);
 set_hitbox_value(AT_JAB, 1, HG_HIT_SFX, asset_get("sfx_blow_weak2"));
 set_hitbox_value(AT_JAB, 1, HG_HITBOX_GROUP, -1);
+set_hitbox_value(AT_JAB, 1, HG_FORCE_FLINCH, 1);
 
 set_hitbox_value(AT_JAB, 2, HG_HITBOX_TYPE, 1);
 set_hitbox_value(AT_JAB, 2, HG_WINDOW, 5);
 set_hitbox_value(AT_JAB, 2, HG_LIFETIME, 2);
-set_hitbox_value(AT_JAB, 2, HG_HITBOX_X, 30);
+set_hitbox_value(AT_JAB, 2, HG_HITBOX_X, 38);
 set_hitbox_value(AT_JAB, 2, HG_HITBOX_Y, -35);
 set_hitbox_value(AT_JAB, 2, HG_WIDTH, 65);
 set_hitbox_value(AT_JAB, 2, HG_HEIGHT, 55);

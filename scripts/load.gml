@@ -25,17 +25,17 @@ sprite_change_offset("tech", 32, 62);
 
 sprite_change_offset("dattack_hitfx", 100, 100);
 
-sprite_change_offset("jab", 64, 94);
+sprite_change_offset("jab", 50, 96);
 sprite_change_offset("dattack", 66, 94);
 sprite_change_offset("ftilt", 54, 98);
-sprite_change_offset("dtilt", 50, 66);
+sprite_change_offset("dtilt", 44, 34);
 sprite_change_offset("utilt", 70, 108);
 sprite_change_offset("nair", 64, 94);
 sprite_change_offset("fair", 64, 94);
 sprite_change_offset("bair", 64, 94);
 sprite_change_offset("uair", 64, 94);
 sprite_change_offset("dair", 64, 94);
-sprite_change_offset("fstrong", 116, 160);
+sprite_change_offset("fstrong", 68, 104);
 sprite_change_offset("ustrong", 64, 158);
 sprite_change_offset("dstrong", 64, 94);
 sprite_change_offset("nspecial", 64, 94);

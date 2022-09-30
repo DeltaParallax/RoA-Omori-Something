@@ -23,10 +23,13 @@ dash_stop_percent = .35; //the value to multiply your hsp by when going into idl
 ground_friction = .6;
 moonwalk_accel = 1.4;
 
+djump_accel = -2.6;
+djump_accel_start_time = 4;
+djump_accel_end_time = 10;
 jump_start_time = 5;
 jump_speed = 10;
 short_hop_speed = 5.5;
-djump_speed = 9;
+djump_speed = -0.6;
 leave_ground_max = 7.5; //the maximum hsp you can have when you go from grounded to aerial without jumping
 max_jump_hsp = 7; //the maximum hsp you can have when jumping from the ground
 air_max_speed = 6; //the maximum hsp you can accelerate to when in a normal aerial state

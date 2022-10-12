@@ -8,6 +8,9 @@ sprite_change_offset("dashstart", 52, 70);
 sprite_change_offset("dashstop", 40, 84);
 sprite_change_offset("dashturn", 52, 72);
 
+sprite_change_offset("something_idle_hurtbox", 18, 88);
+sprite_change_offset("something_crouch_hurtbox", 24, 26);
+
 sprite_change_offset("jumpstart", 20, 78);
 sprite_change_offset("jump", 22, 94);
 sprite_change_offset("doublejump", 32, 86);
@@ -16,7 +19,7 @@ sprite_change_offset("pratfall", 32, 62);
 sprite_change_offset("land", 20, 90);
 sprite_change_offset("landinglag", 32, 62);
 
-sprite_change_offset("parry", 32, 62);
+sprite_change_offset("parry", 84, 92);
 sprite_change_offset("roll_forward", 32, 62);
 sprite_change_offset("roll_backward", 32, 62);
 sprite_change_offset("airdodge", 32, 62);
@@ -24,6 +27,7 @@ sprite_change_offset("waveland", 48, 92);
 sprite_change_offset("tech", 32, 62);
 
 sprite_change_offset("dattack_hitfx", 100, 100);
+sprite_change_offset("hit_particle1", 10, 18);
 
 sprite_change_offset("jab", 50, 96);
 sprite_change_offset("dattack", 66, 94);

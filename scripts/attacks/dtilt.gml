@@ -6,7 +6,7 @@ set_window_value(AT_DTILT, 1, AG_WINDOW_TYPE, 1);
 set_window_value(AT_DTILT, 1, AG_WINDOW_LENGTH, 7);
 set_window_value(AT_DTILT, 1, AG_WINDOW_ANIM_FRAMES, 2);
 set_window_value(AT_DTILT, 1, AG_WINDOW_HAS_SFX, 1);
-set_window_value(AT_DTILT, 1, AG_WINDOW_SFX, asset_get("sfx_swipe_weak1"));
+set_window_value(AT_DTILT, 1, AG_WINDOW_SFX, asset_get("sfx_swipe_medium2"));
 set_window_value(AT_DTILT, 1, AG_WINDOW_SFX_FRAME, 4);
 
 set_window_value(AT_DTILT, 2, AG_WINDOW_TYPE, 1);
@@ -39,3 +39,4 @@ set_hitbox_value(AT_DTILT, 1, HG_KNOCKBACK_SCALING, .3);
 set_hitbox_value(AT_DTILT, 1, HG_BASE_HITPAUSE, 5);
 set_hitbox_value(AT_DTILT, 1, HG_HITPAUSE_SCALING, .35);
 set_hitbox_value(AT_DTILT, 1, HG_HIT_SFX, asset_get("sfx_blow_medium1"));
+set_hitbox_value(AT_UTILT, 1, HG_HIT_PARTICLE_NUM, 1);

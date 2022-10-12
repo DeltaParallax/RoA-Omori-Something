@@ -51,6 +51,7 @@ set_hitbox_value(AT_FSTRONG, 1, HG_BASE_HITPAUSE, 9);
 set_hitbox_value(AT_FSTRONG, 1, HG_HITPAUSE_SCALING, 1);
 set_hitbox_value(AT_FSTRONG, 1, HG_HIT_SFX, sound_get("sfx_critical_hit"));
 set_hitbox_value(AT_FSTRONG, 1, HG_VISUAL_EFFECT, vfx_dattack_sweet);
+set_hitbox_value(AT_FSTRONG, 1, HG_HIT_PARTICLE_NUM, 1);
 
 set_hitbox_value(AT_FSTRONG, 2, HG_HITBOX_TYPE, 1);
 set_hitbox_value(AT_FSTRONG, 2, HG_WINDOW, 4);
@@ -68,3 +69,4 @@ set_hitbox_value(AT_FSTRONG, 2, HG_KNOCKBACK_SCALING, 0.8);
 set_hitbox_value(AT_FSTRONG, 2, HG_BASE_HITPAUSE, 8);
 set_hitbox_value(AT_FSTRONG, 2, HG_HITPAUSE_SCALING, 0.7);
 set_hitbox_value(AT_FSTRONG, 2, HG_HIT_SFX, asset_get("sfx_blow_medium3"));
+set_hitbox_value(AT_FSTRONG, 2, HG_HIT_PARTICLE_NUM, 1);

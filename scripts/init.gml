@@ -1,5 +1,5 @@
-hurtbox_spr = asset_get("ex_guy_hurt_box");
-crouchbox_spr = asset_get("ex_guy_crouch_box");
+hurtbox_spr = sprite_get("something_idle_hurtbox");
+crouchbox_spr = sprite_get("something_crouch_hurtbox");
 air_hurtbox_spr = -1;
 hitstun_hurtbox_spr = -1;
 
@@ -62,7 +62,7 @@ crouch_recovery_frames = 1;
 //parry animation frames
 dodge_startup_frames = 1;
 dodge_active_frames = 1;
-dodge_recovery_frames = 3;
+dodge_recovery_frames = 5;
 
 //tech animation frames
 tech_active_frames = 3;
@@ -102,3 +102,6 @@ bubble_x = 0;
 bubble_y = 8;
 
 vfx_dattack_sweet = hit_fx_create(sprite_get("dattack_hitfx"), 24);
+dattack_angle_difference = 0;
+dattack_active_speed = 12;
+

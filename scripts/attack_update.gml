@@ -6,6 +6,25 @@ if (attack == AT_NSPECIAL || attack == AT_FSPECIAL || attack == AT_DSPECIAL || a
 //others
 switch (attack)
 {
+    
+    case AT_NAIR:
+    
+        switch (window)
+        {
+            case 1:
+                if (window_timer == 1)
+                {
+                    sound_play(sound_get("sfx_glitch"), false, noone, 0.5, 1.1)
+                }
+                else if (window_timer == 4)
+                {
+                    sound_play(sound_get("sfx_swipe"), false, noone, 0.4, 0.75)
+                }
+            break;
+        }
+    
+    break;
+    
     case AT_DATTACK:
     can_fast_fall = window == 1;
     

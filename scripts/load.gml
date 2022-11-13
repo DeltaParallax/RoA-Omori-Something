@@ -37,17 +37,21 @@ sprite_change_offset("utilt", 72, 114);
 sprite_change_offset("nair", 68, 100);
 sprite_change_offset("fair", 34, 100);
 sprite_change_offset("bair", 64, 94);
-sprite_change_offset("uair", 64, 94);
+sprite_change_offset("uair", 24, 188);
 sprite_change_offset("dair", 64, 94);
 sprite_change_offset("fstrong", 68, 104);
 sprite_change_offset("ustrong", 64, 158);
 sprite_change_offset("dstrong", 64, 94);
-sprite_change_offset("nspecial", 64, 94);
+sprite_change_offset("nspecial", 58, 90);
 sprite_change_offset("fspecial", 64, 94);
 sprite_change_offset("uspecial", 64, 94);
 sprite_change_offset("dspecial", 64, 94);
 sprite_change_offset("taunt", 32, 62);
 
 sprite_change_offset("plat", 64, 94);
+sprite_change_offset("melon", 24, 24);
+sprite_change_offset("melon_mask", 24, 24);
+sprite_change_offset("particles", 8,8);
+sprite_change_offset("hfx_watermelon", 108, 88);
 
 sprite_change_offset("nspecial_proj", 64, 94);

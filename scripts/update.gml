@@ -1,4 +1,15 @@
 //MINI attack_update to include the case window_timer = 0;
+update_particles()
+
+with (hit_fx_obj)
+{
+    if (sprite_index == sprite_get("hfx_watermelon") and spr_dir == -1 and "turned" not in self)
+    {
+        turned = true;
+        spr_dir = 1;
+    }
+}
+
 if (is_attacking())
 {
     switch (attack)
@@ -64,6 +75,25 @@ if (is_attacking())
     }
 }
 
+#define update_particles()
+var i = 0;
+while (i < ds_list_size(particles))
+{
+    particles[| i].vsp += particles[| i].grav;
+    particles[| i].hsp = max((abs(particles[| i].hsp) + particles[| i].hsp_decay), 0)*sign(particles[| i].hsp);
+    particles[| i].alpha -= particles[| i].alpha_decay;
+    
+    particles[| i].x_pos += particles[| i].hsp;
+    particles[| i].y_pos += particles[| i].vsp;
+    
+    particles[| i].angle = (particles[| i].angle + particles[| i].torque) mod 360;
+    if (particles[| i].alpha == 0)
+    {
+        ds_list_delete(particles, i);
+    }
+    
+    i++;
+}
 
 #define is_attacking()
 return state == PS_ATTACK_AIR or state == PS_ATTACK_GROUND;

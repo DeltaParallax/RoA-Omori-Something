@@ -102,6 +102,9 @@ bubble_x = 0;
 bubble_y = 8;
 
 vfx_dattack_sweet = hit_fx_create(sprite_get("dattack_hitfx"), 24);
+vfx_watermelon = hit_fx_create(sprite_get("hfx_watermelon"), 28);
 dattack_angle_difference = 0;
 dattack_active_speed = 12;
+
+particles = ds_list_create();
 

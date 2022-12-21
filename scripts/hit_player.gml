@@ -48,4 +48,11 @@ switch (my_hitboxID.attack)
         }
     
     break;
+    
+    case AT_BAIR:
+        if my_hitboxID.hbox_num == 1
+        {
+            sound_play(asset_get("sfx_blow_heavy1"),false,noone,0.8,1.1);
+        }
+    break;
 }

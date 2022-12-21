@@ -51,4 +51,35 @@ switch (attack)
             sound_play(asset_get("sfx_zetter_downb"), false, noone);
         }
     break;
+    case AT_FSPECIAL:
+    if window == 1 && window_timer == 11 && !free && !instance_exists(puddle) && (instance_exists(collision_line(x + 74*spr_dir, y + 2, x + 74*spr_dir, y + 18, asset_get("par_block"), 1, 1)) || instance_exists(collision_line(x + 74*spr_dir, y + 2, x + 74*spr_dir, y + 18, asset_get("par_jumpthrough"), 1, 1))) puddle = instance_create(x + 34*spr_dir, y + 2, "obj_article1");
+    if window == 2 && instance_exists(puddle){
+        if puddle.state == 3 && special_down && !tap_timer && !puddle.attack{
+            puddle.state = 2;
+            puddle.timer = 0;
+        }
+        if tap_timer tap_timer--;
+        if special_pressed && tap_timer{
+            puddle.attack = 1
+        }
+        if !special_down && !tap{
+            window_timer = 0;
+            puddle.hsp = 0;
+            tap_timer = 6;
+            tap = 1;
+            if !puddle.attack && puddle.state != 5{
+                puddle.state = 3;
+                puddle.timer = 0;
+            }
+        }
+        if tap_timer == 1{
+            window = 3;
+            window_timer = 0;
+        }
+    }
+    if window == 2 && !instance_exists(puddle){
+        window = 3;
+        window_timer = 0;
+    }
+    break;
 }

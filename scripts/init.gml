@@ -108,3 +108,7 @@ dattack_active_speed = 12;
 
 particles = ds_list_create();
 
+//fspecial
+puddle = noone;
+tap_timer = 0;
+tap = 0;

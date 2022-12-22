@@ -112,3 +112,7 @@ particles = ds_list_create();
 puddle = noone;
 tap_timer = 0;
 tap = 0;
+
+//uspecial
+usp_angle = 0;
+t_dist = 0;

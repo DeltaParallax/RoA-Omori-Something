@@ -15,7 +15,7 @@ sprite_change_offset("jumpstart", 20, 78);
 sprite_change_offset("jump", 22, 94);
 sprite_change_offset("doublejump", 32, 86);
 sprite_change_offset("walljump", 32, 62);
-sprite_change_offset("pratfall", 32, 62);
+sprite_change_offset("pratfall", 20, 94);
 sprite_change_offset("land", 20, 90);
 sprite_change_offset("landinglag", 32, 62);
 
@@ -44,7 +44,7 @@ sprite_change_offset("ustrong", 64, 158);
 sprite_change_offset("dstrong", 64, 94);
 sprite_change_offset("nspecial", 58, 90);
 sprite_change_offset("fspecial", 38, 92);
-sprite_change_offset("uspecial", 64, 94);
+sprite_change_offset("uspecial", 56, 106);
 sprite_change_offset("dspecial", 64, 94);
 sprite_change_offset("taunt", 32, 62);
 

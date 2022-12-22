@@ -82,4 +82,27 @@ switch (attack)
         window_timer = 0;
     }
     break;
+    case AT_USPECIAL:
+    can_move = 0;
+    can_fast_fall = 0;
+    hsp = 0;
+    vsp = (window = 3 && window_timer >= 28? vsp: 0);
+    if window == 1 && window_timer == get_window_value(attack, window, AG_WINDOW_LENGTH) usp_angle = (joy_pad_idle? 90: joy_dir);
+    if window == 2{
+        visible = 0;
+        if window_timer == 2 for(var n = 350; n >= 0; n--){
+            if !instance_exists(collision_point(x + dcos(usp_angle)*n, y - dsin(usp_angle)*n - char_height/2, asset_get("par_block"), 1, 1)){
+                t_dist = n;
+                break;
+            }
+        }
+        if window_timer == 4{
+            x += dcos(usp_angle)*t_dist;
+            y -= dsin(usp_angle)*t_dist - char_height/2;
+        }
+    }
+    if window == 3{
+        visible = 1;
+    }
+    break;
 }

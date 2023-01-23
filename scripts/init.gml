@@ -49,7 +49,7 @@ hitstun_grav = .45;
 knockback_adj = 1.15; //the multiplier to KB dealt to you. 1 = default, >1 = lighter, <1 = heavier
 
 land_time = 4; //normal landing frames
-prat_land_time = 3;
+prat_land_time = 16;
 wave_land_time = 9;
 wave_land_adj = 1.35; //the multiplier to your initial hsp when wavelanding. Usually greater than 1
 wave_friction = .1; //grounded deceleration when wavelanding
@@ -94,7 +94,7 @@ land_sound = asset_get("sfx_land_med");
 landing_lag_sound = asset_get("sfx_land");
 waveland_sound = asset_get("sfx_waveland_zet");
 jump_sound = asset_get("sfx_jumpground");
-djump_sound = asset_get("sfx_jumpair");
+djump_sound = asset_get("sfx_absa_jump");
 air_dodge_sound = asset_get("sfx_quick_dodge");
 
 //visual offsets for when you're in Ranno's bubble

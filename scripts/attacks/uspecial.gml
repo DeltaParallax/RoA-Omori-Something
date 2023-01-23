@@ -9,6 +9,9 @@ set_attack_value(AT_USPECIAL, AG_HURTBOX_SPRITE, sprite_get("uspecial_hurt"));
 set_window_value(AT_USPECIAL, 1, AG_WINDOW_TYPE, 1);
 set_window_value(AT_USPECIAL, 1, AG_WINDOW_LENGTH, 45);
 set_window_value(AT_USPECIAL, 1, AG_WINDOW_ANIM_FRAMES, 15);
+set_window_value(AT_USPECIAL, 1, AG_WINDOW_HAS_SFX, 1);
+set_window_value(AT_USPECIAL, 1, AG_WINDOW_SFX, asset_get("sfx_absa_taunt"));
+set_window_value(AT_USPECIAL, 1, AG_WINDOW_SFX_FRAME, 1);
 
 set_window_value(AT_USPECIAL, 2, AG_WINDOW_TYPE, 1);
 set_window_value(AT_USPECIAL, 2, AG_WINDOW_LENGTH, 5);
@@ -16,10 +19,14 @@ set_window_value(AT_USPECIAL, 2, AG_WINDOW_ANIM_FRAMES, 1);
 set_window_value(AT_USPECIAL, 2, AG_WINDOW_ANIM_FRAME_START, 14);
 set_window_value(AT_USPECIAL, 2, AG_WINDOW_INVINCIBILITY, 1);
 
+
 set_window_value(AT_USPECIAL, 3, AG_WINDOW_TYPE, 7);
 set_window_value(AT_USPECIAL, 3, AG_WINDOW_LENGTH, 44);
 set_window_value(AT_USPECIAL, 3, AG_WINDOW_ANIM_FRAMES, 11);
 set_window_value(AT_USPECIAL, 3, AG_WINDOW_ANIM_FRAME_START, 15);
+set_window_value(AT_USPECIAL, 3, AG_WINDOW_HAS_SFX, 1);
+set_window_value(AT_USPECIAL, 3, AG_WINDOW_SFX, asset_get("sfx_boss_vortex_end"));
+set_window_value(AT_USPECIAL, 3, AG_WINDOW_SFX_FRAME, 1);
 
 set_num_hitboxes(AT_USPECIAL, 1);
 

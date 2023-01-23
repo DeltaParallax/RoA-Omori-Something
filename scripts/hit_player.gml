@@ -6,6 +6,12 @@ switch (my_hitboxID.attack)
             hit_player_obj.x = lerp(hit_player_obj.x, x + (40*spr_dir), 0.1)
             hit_player_obj.y = lerp(hit_player_obj.y, y - 10, 0.1)
         }
+        {
+        if my_hitboxID.hbox_num == 4
+            sound_play(asset_get("sfx_blow_heavy1"))
+        }
+        if my_hitboxID.hbox_num == 1
+            sound_play(asset_get("sfx_ori_seinhit_weak"))
     break;
     case AT_DATTACK:
         if my_hitboxID.hbox_num == 1
@@ -14,10 +20,17 @@ switch (my_hitboxID.attack)
         }
     break;
     case AT_UAIR:
+         if my_hitboxID.hbox_num == 1
+        {
+            sound_play(asset_get("sfx_blow_heavy2"),false,noone,0.8,1.1);
+        }
+        break;
+        
     case AT_FSTRONG:
         if my_hitboxID.hbox_num == 1
         {
             sound_play(asset_get("sfx_blow_heavy2"),false,noone,0.8,1.1);
+            sound_play(sound_get("sfx_big_stab"),false,noone,0.8,1.1);
         }
     break;
     
@@ -46,13 +59,24 @@ switch (my_hitboxID.attack)
             ds_list_add(particles, new_particle);
             i += 1;
         }
-    
+        if my_hitboxID.hbox_num == 1
+        {
+            sound_play(sound_get("sfx_melon"))
+        }
     break;
     
     case AT_BAIR:
         if my_hitboxID.hbox_num == 1
         {
             sound_play(asset_get("sfx_blow_heavy1"),false,noone,0.8,1.1);
+            sound_play(sound_get("sfx_stab"))
         }
     break;
+    
+    case AT_USPECIAL:
+        if my_hitboxID.hbox_num == 1
+        {
+            sound_play(asset_get("sfx_blow_heavy2"),false,noone,0.8,1.1);
+        }
 }
+  

@@ -13,6 +13,9 @@ set_window_value(AT_FSPECIAL, 1, AG_WINDOW_HAS_CUSTOM_FRICTION, 1);
 set_window_value(AT_FSPECIAL, 1, AG_WINDOW_CUSTOM_AIR_FRICTION, 10);
 set_window_value(AT_FSPECIAL, 1, AG_WINDOW_CUSTOM_GROUND_FRICTION, 2);
 set_window_value(AT_FSPECIAL, 1, AG_WINDOW_CUSTOM_GRAVITY, 0.2);
+set_window_value(AT_FSPECIAL, 1, AG_WINDOW_HAS_SFX, 1);
+set_window_value(AT_FSPECIAL, 1, AG_WINDOW_SFX, asset_get("sfx_abyss_spawn"));
+set_window_value(AT_FSPECIAL, 1, AG_WINDOW_SFX_FRAME, 8);
 
 set_window_value(AT_FSPECIAL, 2, AG_WINDOW_TYPE, 9);
 set_window_value(AT_FSPECIAL, 2, AG_WINDOW_LENGTH, 15);

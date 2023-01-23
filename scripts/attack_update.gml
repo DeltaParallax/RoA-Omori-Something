@@ -42,15 +42,21 @@ switch (attack)
             }
         break;
     }
-    
-
     break;
+
     case AT_FTILT:
         if (window == 1 and window_timer == 9)
         {
             sound_play(asset_get("sfx_zetter_downb"), false, noone);
         }
     break;
+    
+     case AT_NSPECIAL:
+        if (window == 1 and window_timer == 4)
+        {
+            sound_play(sound_get("sfx_throw"), false, noone);
+        }
+        
     case AT_FSPECIAL:
     if window == 1 && window_timer == 11 && !free && !instance_exists(puddle) && (instance_exists(collision_line(x + 74*spr_dir, y + 2, x + 74*spr_dir, y + 18, asset_get("par_block"), 1, 1)) || instance_exists(collision_line(x + 74*spr_dir, y + 2, x + 74*spr_dir, y + 18, asset_get("par_jumpthrough"), 1, 1))) puddle = instance_create(x + 34*spr_dir, y + 2, "obj_article1");
     if window == 2 && instance_exists(puddle){
@@ -104,5 +110,9 @@ switch (attack)
     if window == 3{
         visible = 1;
     }
+      if (window == 3 and window_timer == 7)
+      {
+        sound_play(sound_get("sfx_glitch"));
+      }
     break;
 }

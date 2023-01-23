@@ -98,7 +98,7 @@ switch (attack)
     if window == 1 && window_timer == get_window_value(attack, window, AG_WINDOW_LENGTH) usp_angle = (joy_pad_idle? 90: joy_dir);
     if window == 2{
         visible = 0;
-        if window_timer == 2 for(var n = 350; n >= 0; n--){
+        if window_timer == 2 for(var n = 250; n >= 0; n--){
             if !instance_exists(collision_point(x + dcos(usp_angle)*n, y - dsin(usp_angle)*n - char_height/2, asset_get("par_block"), 1, 1)){
                 t_dist = n;
                 break;

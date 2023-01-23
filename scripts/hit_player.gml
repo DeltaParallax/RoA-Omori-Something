@@ -1,5 +1,10 @@
 switch (my_hitboxID.attack)
 {
+    case AT_USPECIAL:
+        sound_play(asset_get("sfx_blow_heavy1"));
+        sound_play(asset_get("sfx_ori_energyhit_medium"),false,noone,0.6,0.9);
+        sound_play(asset_get("sfx_ori_energyhit_heavy"),false,noone,0.6,1.1);
+    break;
     case AT_FAIR:
         if my_hitboxID.hbox_num == 5
         {
@@ -76,11 +81,5 @@ switch (my_hitboxID.attack)
             sound_play(sound_get("sfx_stab"))
         }
     break;
-    
-    case AT_USPECIAL:
-        if my_hitboxID.hbox_num == 1
-        {
-            sound_play(asset_get("sfx_blow_heavy2"),false,noone,0.8,1.1);
-        }
 }
   

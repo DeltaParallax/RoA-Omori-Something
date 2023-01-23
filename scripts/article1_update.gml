@@ -1,4 +1,5 @@
-timer++;
+if hstop hstop--;
+else timer++;
 /*
 0 spawn
 1 move
@@ -6,6 +7,7 @@ timer++;
 3 attack
 4 die
 */
+
 switch state{
     case 0:
     image_index = timer/3
@@ -20,7 +22,7 @@ switch state{
         state = 3;
         timer = 0;
     }
-    if !instance_exists(collision_line(x + 44*player_id.spr_dir, y, x + 44*player_id.spr_dir, y + 16, asset_get("par_block"), 1, 1)) && !instance_exists(collision_line(x + 44*player_id.spr_dir, y, x + 44*player_id.spr_dir, y + 16, asset_get("par_jumpthrough"), 1, 1)){
+    if !instance_exists(collision_line(x + 40*player_id.spr_dir, y, x + 40*player_id.spr_dir, y + 16, asset_get("par_block"), 1, 1)) && !instance_exists(collision_line(x + 40*player_id.spr_dir, y, x + 40*player_id.spr_dir, y + 16, asset_get("par_jumpthrough"), 1, 1)){
         image_index = 22;
         state = 5;
         timer = 5;
@@ -45,17 +47,17 @@ switch state{
     }
     break;
     case 4:
-    image_index = timer/3;
-    if timer == 28 sound_play(asset_get("sfx_swipe_medium1"));
-    if timer == 30 && box == noone box = create_hitbox(AT_FSPECIAL, 1, x + 5, y - 20);
-    if image_index >= 21{
+    image_index = timer/4;
+    if timer == 22 sound_play(asset_get("sfx_swipe_heavy2"));
+    if timer == 24 && box == noone box = create_hitbox(AT_FSPECIAL, 1, x - 5, y - 50);
+    if image_index >= 12{
         state = 5;
         timer = 0;
     }
     break;
     case 5:
-    image_index = timer/3 + 21;
-    if image_index >= 24{
+    image_index = timer/3 + 12;
+    if image_index >= 15{
         instance_destroy(self);
         exit;
     }

@@ -57,4 +57,4 @@ sprite_change_offset("hfx_watermelon", 108, 88);
 sprite_change_offset("nspecial_proj", 64, 94);
 
 sprite_change_offset("puddle1", 46, 0);
-sprite_change_offset("puddle2", 56, 72);
+sprite_change_offset("puddle2", 58, 96);

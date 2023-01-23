@@ -75,8 +75,8 @@ techroll_recovery_frames = 2;
 techroll_speed = 10;
 
 //airdodge animation frames
-air_dodge_startup_frames = 1;
-air_dodge_active_frames = 2;
+air_dodge_startup_frames = 3;
+air_dodge_active_frames = 3;
 air_dodge_recovery_frames = 3;
 air_dodge_speed = 8;
 

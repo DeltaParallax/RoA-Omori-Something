@@ -11,3 +11,4 @@ state = 0;
 timer = 0;
 attack = 0;
 box = noone;
+hstop = 0;

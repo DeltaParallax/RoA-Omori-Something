@@ -65,6 +65,10 @@ switch (my_hitboxID.attack)
         }
     break;
     
+    case AT_FSPECIAL:
+    puddle.hstop = get_hitstop_formula(get_player_damage(hit_player_obj.player), my_hitboxID.damage, 9, .8, 0);
+    break;
+    
     case AT_BAIR:
         if my_hitboxID.hbox_num == 1
         {

@@ -67,11 +67,12 @@ switch (attack)
         if tap_timer tap_timer--;
         if special_pressed && tap_timer{
             puddle.attack = 1
+            puddle.depth = depth - 2;
         }
         if !special_down && !tap{
             window_timer = 0;
             puddle.hsp = 0;
-            tap_timer = 6;
+            tap_timer = 10;
             tap = 1;
             if !puddle.attack && puddle.state != 5{
                 puddle.state = 3;
@@ -83,6 +84,7 @@ switch (attack)
             window_timer = 0;
         }
     }
+    clear_button_buffer(PC_SPECIAL_PRESSED);
     if window == 2 && !instance_exists(puddle){
         window = 3;
         window_timer = 0;

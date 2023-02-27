@@ -40,7 +40,7 @@ sprite_change_offset("bair", 132, 96);
 sprite_change_offset("uair", 24, 188);
 sprite_change_offset("dair", 68, 94);
 sprite_change_offset("fstrong", 68, 104);
-sprite_change_offset("ustrong", 64, 158);
+sprite_change_offset("ustrong", 42, 110);
 sprite_change_offset("dstrong", 64, 94);
 sprite_change_offset("nspecial", 58, 90);
 sprite_change_offset("fspecial", 38, 92);
@@ -58,3 +58,5 @@ sprite_change_offset("nspecial_proj", 64, 94);
 
 sprite_change_offset("puddle1", 46, 0);
 sprite_change_offset("puddle2", 58, 96);
+
+sprite_change_offset("ustrong_back", 42, 190);

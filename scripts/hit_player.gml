@@ -29,10 +29,18 @@ switch (my_hitboxID.attack)
         {
             sound_play(asset_get("sfx_blow_heavy2"),false,noone,0.8,1.1);
         }
-        break;
+    break;
         
     case AT_FSTRONG:
         if my_hitboxID.hbox_num == 1
+        {
+            sound_play(asset_get("sfx_blow_heavy2"),false,noone,0.8,1.1);
+            sound_play(sound_get("sfx_big_stab"),false,noone,0.8,1.1);
+        }
+    break;
+    
+    case AT_USTRONG:
+        if my_hitboxID.hbox_num == 2
         {
             sound_play(asset_get("sfx_blow_heavy2"),false,noone,0.8,1.1);
             sound_play(sound_get("sfx_big_stab"),false,noone,0.8,1.1);
@@ -47,6 +55,8 @@ switch (my_hitboxID.attack)
             var yscale = random_func( (y*2) mod 4, 10, true) mod 2 == 0 ? 1 : -1;
             var new_particle = {
                 frame : random_func( (x+y+i) mod 10, 3, true),
+                frame_adv : 0,
+                sprite : sprite_get("particles"),
                 angle : 0,
                 torque : 3,
                 alpha : 2,
@@ -58,7 +68,9 @@ switch (my_hitboxID.attack)
                 x_pos : my_hitboxID.x,
                 y_pos : my_hitboxID.y,
                 x_scale : xscale,
-                y_scale : yscale
+                y_scale : yscale,
+                layer : 1,
+                shaded : 0
             }
             
             ds_list_add(particles, new_particle);

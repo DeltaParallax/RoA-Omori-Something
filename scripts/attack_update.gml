@@ -56,7 +56,34 @@ switch (attack)
         {
             sound_play(sound_get("sfx_throw"), false, noone);
         }
+    break;
+    
+    case AT_USTRONG:
+    if window == 3 && window_timer == 8{
+        var new_particle = {
+            frame : 5,
+            frame_adv : 1/4,
+            sprite : sprite_get("ustrong_back"),
+            angle : 0,
+            torque : 0,
+            alpha : 1,
+            alpha_decay : 0,
+            hsp : 0,
+            vsp : 0,
+            hsp_decay : 0,
+            grav : 0,
+            x_pos : x,
+            y_pos : y,
+            x_scale : 1,
+            y_scale : 1,
+            layer : -1,
+            shaded : 1
+        }
         
+        ds_list_add(particles, new_particle);
+    }
+    break;
+    
     case AT_FSPECIAL:
     if window == 1 && window_timer == 11 && !free && !instance_exists(puddle) && (instance_exists(collision_line(x + 74*spr_dir, y + 2, x + 74*spr_dir, y + 18, asset_get("par_block"), 1, 1)) || instance_exists(collision_line(x + 74*spr_dir, y + 2, x + 74*spr_dir, y + 18, asset_get("par_jumpthrough"), 1, 1))) puddle = instance_create(x + 34*spr_dir, y + 2, "obj_article1");
     if window == 2 && instance_exists(puddle){

@@ -85,9 +85,10 @@ while (i < ds_list_size(particles))
     
     particles[| i].x_pos += particles[| i].hsp;
     particles[| i].y_pos += particles[| i].vsp;
+    particles[| i].frame += particles[| i].frame_adv;
     
     particles[| i].angle = (particles[| i].angle + particles[| i].torque) mod 360;
-    if (particles[| i].alpha == 0)
+    if (particles[| i].alpha == 0) || (particles[| i].frame_adv != 0 && particles[| i].frame >= sprite_get_number(particles[| i].sprite))
     {
         ds_list_delete(particles, i);
     }

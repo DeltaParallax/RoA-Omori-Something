@@ -1,7 +1,11 @@
 for (var i = 0; i < ds_list_size(particles); i++)
 {
     var p = particles[| i];
-    draw_sprite_ext(sprite_get("particles"), p.frame, p.x_pos, p.y_pos, p.x_scale, p.y_scale, p.angle, c_white, p.alpha)
+    if p.layer{
+        if p.shaded shader_start();
+        draw_sprite_ext(p.sprite, p.frame, p.x_pos, p.y_pos, p.x_scale, p.y_scale, p.angle, c_white, p.alpha)
+        if p.shaded shader_end();
+    }
 }
 
 // with pHitBox

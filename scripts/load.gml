@@ -18,6 +18,7 @@ sprite_change_offset("walljump", 32, 62);
 sprite_change_offset("pratfall", 20, 94);
 sprite_change_offset("land", 20, 90);
 sprite_change_offset("landinglag", 20,90);
+sprite_change_offset("pratland", 56,80);
 
 sprite_change_offset("parry", 84, 92);
 sprite_change_offset("roll_forward", 32, 62);

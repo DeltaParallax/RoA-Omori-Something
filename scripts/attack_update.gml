@@ -62,7 +62,7 @@ switch (attack)
     if window == 3 && window_timer == 8{
         var new_particle = {
             frame : 5,
-            frame_adv : 1/4,
+            frame_adv : 1/5,
             sprite : sprite_get("ustrong_back"),
             angle : 0,
             torque : 0,
@@ -143,5 +143,8 @@ switch (attack)
       {
         sound_play(sound_get("sfx_glitch"));
       }
+    break;
+    case AT_DSTRONG:
+    if window == 3 && window_timer == 1 && !hitstop shake_camera(5, 10);
     break;
 }

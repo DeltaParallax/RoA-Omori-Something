@@ -7,7 +7,7 @@ else timer++;
 3 attack
 4 die
 */
-
+sprite_index = sprite_get("puddle" + string((state > 3) + 1));
 switch state{
     case 0:
     image_index = timer/3
@@ -25,7 +25,7 @@ switch state{
     if !instance_exists(collision_line(x + 40*player_id.spr_dir, y, x + 40*player_id.spr_dir, y + 16, asset_get("par_block"), 1, 1)) && !instance_exists(collision_line(x + 40*player_id.spr_dir, y, x + 40*player_id.spr_dir, y + 16, asset_get("par_jumpthrough"), 1, 1)){
         image_index = 22;
         state = 5;
-        timer = 5;
+        timer = 0;
         player_id.window = 3;
         player_id.window_timer = 0;
     }
@@ -64,5 +64,4 @@ switch state{
     break;
 }
 
-sprite_index = sprite_get("puddle" + string((state > 3) + 1));
 hsp = (state == 1? hsp + .2 * player_id.spr_dir: 0);

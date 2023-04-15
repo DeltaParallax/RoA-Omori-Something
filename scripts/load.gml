@@ -1,5 +1,11 @@
 sprite_change_offset("idle", 20, 94);
-sprite_change_offset("hurt", 32, 62);
+sprite_change_offset("hurt", 38, 88);
+sprite_change_offset("bighurt", 44, 74);
+sprite_change_offset("groundhurt", 34, 84);
+sprite_change_offset("uphurt", 30, 66);
+sprite_change_offset("downhurt", 30, 72);
+sprite_change_offset("bouncehurt", 38, 70);
+sprite_change_offset("spinhurt", 42, 80);
 sprite_change_offset("crouch", 52, 88);
 sprite_change_offset("walk", 20, 92);
 sprite_change_offset("walkturn", 18, 90);
@@ -50,7 +56,7 @@ sprite_change_offset("uspecial", 56, 106);
 sprite_change_offset("dspecial", 64, 94);
 sprite_change_offset("taunt", 32, 62);
 
-sprite_change_offset("plat", 64, 94);
+sprite_change_offset("plat", 57, 0);
 sprite_change_offset("melon", 24, 24);
 sprite_change_offset("melon_mask", 24, 24);
 sprite_change_offset("particles", 8,8);

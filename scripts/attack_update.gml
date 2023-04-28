@@ -6,7 +6,11 @@ if (attack == AT_NSPECIAL || attack == AT_FSPECIAL || attack == AT_DSPECIAL || a
 //others
 switch (attack)
 {
-    
+    case AT_BAIR:
+        if window == 1 and window_timer == 14 {
+            sound_play(sound_get("sfx_spider_stab"), false, noone, 0.4, 0.9)
+        }
+    break;
     case AT_NAIR:
     
         switch (window)
@@ -136,15 +140,36 @@ switch (attack)
             y -= dsin(usp_angle)*t_dist - char_height/2;
         }
     }
-    if window == 3{
+    
+    if window == 3 {
         visible = 1;
-    }
-      if (window == 3 and window_timer == 7)
-      {
-        sound_play(sound_get("sfx_glitch"));
+        
+        if window_timer == 2 {
+            sound_play(sound_get("sfx_glitch_custom"));
+        }
+        if window_timer == 6 {
+            sound_play(sound_get("sfx_glitch"));
+        }
+        
       }
     break;
+    case AT_USTRONG:
+        if window == 2 and window_timer == 1 {
+            sound_play(sound_get("sfx_ustrong_stab"), false, noone, 0.4, 1.2)
+            sound_play(asset_get("sfx_frog_ustrong"), false, noone, 0.6, 0.95)
+            sound_play(asset_get("sfx_ice_back_air"), false, noone, 0.4, 0.86)
+        }
+    break;
     case AT_DSTRONG:
-    if window == 3 && window_timer == 1 && !hitstop shake_camera(5, 10);
+    switch (window) {
+        case 2:
+        if window_timer == 2 {
+            sound_play(asset_get("sfx_zetter_downb"), false, noone, 0.8, 0.9)
+        }
+        break;
+        case 3:
+            if window_timer == 1 && !hitpause shake_camera(1, 5);
+        break;
+    }
     break;
 }

@@ -81,11 +81,11 @@ air_dodge_recovery_frames = 3;
 air_dodge_speed = 8;
 
 //roll animation frames
-roll_forward_startup_frames = 2;
-roll_forward_active_frames = 4;
+roll_forward_startup_frames = 1;
+roll_forward_active_frames = 1;
 roll_forward_recovery_frames = 2;
-roll_back_startup_frames = 2;
-roll_back_active_frames = 4;
+roll_back_startup_frames = 1;
+roll_back_active_frames = 1;
 roll_back_recovery_frames = 2;
 roll_forward_max = 9; //roll speed
 roll_backward_max = 9;

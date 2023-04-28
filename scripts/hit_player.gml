@@ -35,11 +35,15 @@ switch (my_hitboxID.attack)
         if my_hitboxID.hbox_num == 1
         {
             sound_play(asset_get("sfx_blow_heavy2"),false,noone,0.8,1.1);
-            sound_play(sound_get("sfx_big_stab"),false,noone,0.8,1.1);
+            sound_play(sound_get("sfx_big_stab"),false,noone,0.3,0.87);
+            sound_play(sound_get("sfx_stab_pierce"),false,noone,0.8,1);
         }
     break;
-    
+    case AT_DSTRONG:
+        if my_hitboxID.hbox_num < 3 sound_play(asset_get("sfx_hod_dstrong_hit"),false,noone,1,1.1);
+    break;
     case AT_USTRONG:
+    sound_play(sound_get("sfx_stab_pierce"),false,noone,1,1.1);
         if my_hitboxID.hbox_num == 2
         {
             sound_play(asset_get("sfx_blow_heavy2"),false,noone,0.8,1.1);

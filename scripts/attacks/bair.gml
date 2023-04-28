@@ -10,7 +10,7 @@ set_window_value(AT_BAIR, 1, AG_WINDOW_LENGTH, 15);
 set_window_value(AT_BAIR, 1, AG_WINDOW_ANIM_FRAMES, 4);
 set_window_value(AT_BAIR, 1, AG_WINDOW_VSPEED, -1);
 set_window_value(AT_BAIR, 1, AG_WINDOW_HAS_SFX, 1);
-set_window_value(AT_BAIR, 1, AG_WINDOW_SFX, sound_get("sfx_spider_stab"));
+set_window_value(AT_BAIR, 1, AG_WINDOW_SFX, asset_get("sfx_swipe_medium2"));
 set_window_value(AT_BAIR, 1, AG_WINDOW_SFX_FRAME, 13);
 
 set_window_value(AT_BAIR, 2, AG_WINDOW_TYPE, 1);

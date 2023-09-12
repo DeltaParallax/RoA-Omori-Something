@@ -14,6 +14,11 @@ if (is_attacking())
 {
     switch (attack)
     {
+        case AT_FSPECIAL:
+            if window == 5 and window_timer % 3 == 0 and !hitpause {
+                create_hitbox(attack, 2, x, y)
+            }
+        break;
         case AT_DATTACK:
         switch (window)
         {

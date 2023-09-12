@@ -28,7 +28,7 @@ djump_accel_start_time = 4;
 djump_accel_end_time = 10;
 jump_start_time = 5;
 jump_speed = 8.75;
-short_hop_speed = 4.5;
+short_hop_speed = 4;
 djump_speed = -0.6;
 leave_ground_max = 7.5; //the maximum hsp you can have when you go from grounded to aerial without jumping
 max_jump_hsp = 6; //the maximum hsp you can have when jumping from the ground
@@ -110,8 +110,8 @@ particles = ds_list_create();
 
 //fspecial
 puddle = noone;
-tap_timer = 0;
-tap = 0;
+fspecial_grabbed = []
+fspecial_vfx = hit_fx_create(sprite_get("fspecial_explosion"), 16);
 
 //uspecial
 usp_angle = 0;

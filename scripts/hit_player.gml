@@ -11,12 +11,16 @@ switch (my_hitboxID.attack)
             hit_player_obj.x = lerp(hit_player_obj.x, x + (40*spr_dir), 0.1)
             hit_player_obj.y = lerp(hit_player_obj.y, y - 10, 0.1)
         }
-        {
-        if my_hitboxID.hbox_num == 4
+        
+        if my_hitboxID.hbox_num == 4 {
             sound_play(asset_get("sfx_blow_heavy1"))
         }
         if my_hitboxID.hbox_num == 1
             sound_play(asset_get("sfx_ori_seinhit_weak"))
+    break;
+    case AT_FSPECIAL:
+        set_attack_value(AT_FSPECIAL, AG_NUM_WINDOWS, 5);
+        array_push(fspecial_grabbed, hit_player_obj);
     break;
     case AT_DATTACK:
         if my_hitboxID.hbox_num == 1
@@ -84,10 +88,6 @@ switch (my_hitboxID.attack)
         {
             sound_play(sound_get("sfx_melon"))
         }
-    break;
-    
-    case AT_FSPECIAL:
-    puddle.hstop = get_hitstop_formula(get_player_damage(hit_player_obj.player), my_hitboxID.damage, 9, .8, 0);
     break;
     
     case AT_BAIR:

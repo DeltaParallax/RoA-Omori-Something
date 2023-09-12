@@ -89,69 +89,58 @@ switch (attack)
     break;
     
     case AT_FSPECIAL:
-    if window == 1 && window_timer == 11 && !free && !instance_exists(puddle) && (instance_exists(collision_line(x + 74*spr_dir, y + 2, x + 74*spr_dir, y + 18, asset_get("par_block"), 1, 1)) || instance_exists(collision_line(x + 74*spr_dir, y + 2, x + 74*spr_dir, y + 18, asset_get("par_jumpthrough"), 1, 1))) puddle = instance_create(x + 34*spr_dir, y + 2, "obj_article1");
-    if window == 2 && instance_exists(puddle){
-        if puddle.state == 3 && special_down && !tap_timer && !puddle.attack{
-            puddle.state = 2;
-            puddle.timer = 0;
-        }
-        if tap_timer tap_timer--;
-        if special_pressed && tap_timer{
-            puddle.attack = 1
-            puddle.depth = depth - 2;
-        }
-        if !special_down && !tap{
-            window_timer = 0;
-            puddle.hsp = 0;
-            tap_timer = 10;
-            tap = 1;
-            if !puddle.attack && puddle.state != 5{
-                puddle.state = 3;
-                puddle.timer = 0;
-            }
-        }
-        if tap_timer == 1{
-            window = 3;
-            window_timer = 0;
-        }
-    }
-    clear_button_buffer(PC_SPECIAL_PRESSED);
-    if window == 2 && !instance_exists(puddle){
-        window = 3;
-        window_timer = 0;
-    }
-    break;
-    case AT_USPECIAL:
-    can_move = 0;
-    can_fast_fall = 0;
-    hsp = 0;
-    vsp = (window = 3 && window_timer >= 28? vsp: 0);
-    if window == 1 && window_timer == get_window_value(attack, window, AG_WINDOW_LENGTH) usp_angle = (joy_pad_idle? 90: joy_dir);
-    if window == 2{
-        visible = 0;
-        if window_timer == 2 for(var n = 250; n >= 0; n--){
-            if !instance_exists(collision_point(x + dcos(usp_angle)*n, y - dsin(usp_angle)*n - char_height/2, asset_get("par_block"), 1, 1)){
-                t_dist = n;
+        can_move = (window == 3 and window_timer > 5);
+        switch (window) {
+            
+            case 1:
+                hsp *= 0.98;
+                vsp = vsp > 0 ? vsp * 0.95 : vsp;
+                
+                if window_timer == 18 {
+                    sound_play(asset_get("sfx_oly_fspecial_dash"))
+                }             
+            break;
+            case 2:
+                if (!hitpause and has_hit_player) {
+                    window = 4;
+                    window_timer = 0;
+                }
+            break;
+            case 3:
+                if window_timer >= get_window_value(attack, window, AG_WINDOW_LENGTH) {
+                    move_cooldown[AT_FSPECIAL] = 60;
+                    if free
+                    {
+                        set_state(PS_PRATFALL);
+                    }
+                }
+            break;
+            case 4:
+                vsp *= 0.9;
+                hsp *= 0.9;
+                
+                for (i = 0; i < array_length(fspecial_grabbed); i++) {
+                    fspecial_grabbed[i].x = lerp(fspecial_grabbed[i].x, x, 0.2)
+                    fspecial_grabbed[i].y = lerp(fspecial_grabbed[i].y, y - 30, 0.2)
+                }
                 break;
+            case 5:
+                vsp = 0;
+                hsp = 0;
+                
+                for (i = 0; i < array_length(fspecial_grabbed); i++) {
+                    fspecial_grabbed[i].x = lerp(fspecial_grabbed[i].x, x, 0.2)
+                    fspecial_grabbed[i].y = lerp(fspecial_grabbed[i].y, y - 30, 0.2)
+                }
+                
+            if !hitpause and window_timer >= get_window_value(attack, window, AG_WINDOW_LENGTH) {
+                create_hitbox(attack, 3, x, y)
+                vsp = -7;
+                spawn_hit_fx(x,y-30,fspecial_vfx)
             }
-        }
-        if window_timer == 4{
-            x += dcos(usp_angle)*t_dist;
-            y -= dsin(usp_angle)*t_dist - char_height/2;
-        }
-    }
-    
-    if window == 3 {
-        visible = 1;
-        
-        if window_timer == 2 {
-            sound_play(sound_get("sfx_glitch_custom"));
-        }
-        if window_timer == 6 {
-            sound_play(sound_get("sfx_glitch"));
+            break;
         }
         
-      }
     break;
     case AT_USTRONG:
         if window == 2 and window_timer == 1 {

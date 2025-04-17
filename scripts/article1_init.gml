@@ -1,14 +1,34 @@
-state = 0;
-/*
-0 spawn
-1 move
-2 unsettle
-3 settle
-4 attack
-5 die
-*/
+state = PS_SPAWN;
+state_timer = 0;
+lock_state = 0;
+depth = player_id.depth - 2
+sprite_index = sprite_get("stranger_nspec")
+state_info = ds_map_create()
 
-timer = 0;
-attack = 0;
-box = noone;
-hstop = 0;
+hitbox = noone;
+state_info[? PS_SPAWN] = {
+    length : 20,
+    frame_start : 1,
+    frames : 6,
+    loop: false
+}
+
+state_info[? PS_IDLE] = {
+    length : 24,
+    frame_start : 8,
+    frames : 6,
+    loop: true
+}
+
+state_info[? PS_DEAD] = {
+    length : 20,
+    frame_start : 15,
+    frames : 5,
+    loop: false
+}
+
+max_speed = 10;
+
+player_id.x -= 20000
+closest_player = instance_nearest(x,y,asset_get("oPlayer"))
+player_id.x += 20000

@@ -1,67 +1,40 @@
-if hstop hstop--;
-else timer++;
-/*
-0 spawn
-1 move
-2 settle
-3 attack
-4 die
-*/
-sprite_index = sprite_get("puddle" + string((state > 3) + 1));
-switch state{
-    case 0:
-    image_index = timer/3
-    if image_index >= 3{
-        state = 1;
-        timer = 0;
-    }
+
+switch state {
+    case PS_IDLE:
+        if state_timer == 0 and !instance_exists(hitbox) {
+            hitbox = create_hitbox(AT_NSPECIAL, 1, x,y-30)
+        }
+        
+        if instance_exists(hitbox) {
+            hitbox.x = x;
+            hitbox.y = y - 30
+        }
+        hsp = lerp(hsp, max_speed*spr_dir, 0.1)
+        
+        dir = point_direction(x, y, floor(closest_player.x), floor(closest_player.y - (closest_player.char_height / 2)));
+        vsp = lerp(vsp, lengthdir_y(10,dir), 0.1)
     break;
-    case 1:
-    image_index = timer/5 % 3 + 3;
-    if attack{
-        state = 3;
-        timer = 0;
-    }
-    if !instance_exists(collision_line(x + 40*player_id.spr_dir, y, x + 40*player_id.spr_dir, y + 16, asset_get("par_block"), 1, 1)) && !instance_exists(collision_line(x + 40*player_id.spr_dir, y, x + 40*player_id.spr_dir, y + 16, asset_get("par_jumpthrough"), 1, 1)){
-        image_index = 22;
-        state = 5;
-        timer = 0;
-        player_id.window = 3;
-        player_id.window_timer = 0;
-    }
-    break;
-    case 2:
-    if image_index > 6 image_index = ((9 - timer)/3) + 6;
-    else{
-        state = 1;
-        timer = 0;
-    }
-    break;
-    case 3:
-    if image_index < image_number - 1 image_index = (timer/3) + 6;
-    else image_index = 9;
-    if image_index >= 9 && attack{
-        image_index = 0;
-        state = 4;
-        timer = 0;
-    }
-    break;
-    case 4:
-    image_index = timer/4;
-    if timer == 22 sound_play(asset_get("sfx_swipe_heavy2"));
-    if timer == 24 && box == noone box = create_hitbox(AT_FSPECIAL, 1, x - 5, y - 50);
-    if image_index >= 12{
-        state = 5;
-        timer = 0;
-    }
-    break;
-    case 5:
-    image_index = timer/3 + 12;
-    if image_index >= 15{
-        instance_destroy(self);
-        exit;
-    }
+    case PS_DEAD:
+        hsp *= 0.93;
+        vsp *= 0.93;
     break;
 }
 
-hsp = (state == 1? hsp + .2 * player_id.spr_dir: 0);
+
+state_timer+=1
+image_index = ((state_timer / state_info[? state].length) * state_info[? state].frames) + state_info[? state].frame_start;
+
+if state_timer >= state_info[? state].length {
+    if !state_info[? state].loop {
+        switch state {
+            case PS_SPAWN:
+                state = PS_IDLE
+            break;
+            case PS_DEAD:
+                instance_destroy()
+            break;
+        }
+    }
+    
+    state_timer = 0;
+}

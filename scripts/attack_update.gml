@@ -6,6 +6,23 @@ if (attack == AT_NSPECIAL || attack == AT_FSPECIAL || attack == AT_DSPECIAL || a
 //others
 switch (attack)
 {
+    case AT_USPECIAL:
+        if ((window == 1 and window_timer > 20) or window == 2) and !joy_pad_idle{
+            uspecial_dir = round(joy_dir / 45)*45
+        }
+    
+        if window == 2 and window_timer == 4 {
+            var dist = 120
+            x += lengthdir_x(dist, uspecial_dir)
+            y += lengthdir_y(dist, uspecial_dir)
+        }
+    
+        if !(window == 3 and window_timer > 42) {
+            can_move = false
+            hsp *= 0.5
+            vsp *= 0.5
+        }
+    break;
     case AT_BAIR:
         if window == 1 and window_timer == 14 {
             sound_play(sound_get("sfx_spider_stab"), false, noone, 0.4, 0.9)
@@ -58,7 +75,7 @@ switch (attack)
      case AT_NSPECIAL:
         if (window == 1 and window_timer == 4)
         {
-            sound_play(sound_get("sfx_throw"), false, noone);
+            move_cooldown[AT_NSPECIAL] = 40
         }
     break;
     
@@ -101,15 +118,19 @@ switch (attack)
                 }             
             break;
             case 2:
-                if (!hitpause and has_hit_player) {
-                    window = 4;
-                    window_timer = 0;
+                if has_hit_player {
+                    if array_length(fspecial_grabbed) == 0 {
+                        can_jump = true
+                    } else if !hitpause {
+                        window = 4;
+                        window_timer = 0;                        
+                    }
                 }
             break;
             case 3:
                 if window_timer >= get_window_value(attack, window, AG_WINDOW_LENGTH) {
                     move_cooldown[AT_FSPECIAL] = 60;
-                    if free
+                    if free and !has_hit_player
                     {
                         set_state(PS_PRATFALL);
                     }
@@ -135,7 +156,7 @@ switch (attack)
                 
             if !hitpause and window_timer >= get_window_value(attack, window, AG_WINDOW_LENGTH) {
                 create_hitbox(attack, 3, x, y)
-                vsp = -7;
+                vsp = -7
                 spawn_hit_fx(x,y-30,fspecial_vfx)
             }
             break;

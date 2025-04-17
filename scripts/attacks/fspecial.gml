@@ -48,8 +48,6 @@ set_window_value(AT_FSPECIAL, 5, AG_WINDOW_TYPE, 1);
 set_window_value(AT_FSPECIAL, 5, AG_WINDOW_LENGTH, 34);
 set_window_value(AT_FSPECIAL, 5, AG_WINDOW_ANIM_FRAMES, 17);
 set_window_value(AT_FSPECIAL, 5, AG_WINDOW_ANIM_FRAME_START, 21);
-set_window_value(AT_FSPECIAL, 5, AG_WINDOW_VSPEED, 0)
-set_window_value(AT_FSPECIAL, 5, AG_WINDOW_HSPEED, 0)
 
 
 set_num_hitboxes(AT_FSPECIAL, 2);

@@ -50,7 +50,7 @@ sprite_change_offset("fstrong", 68, 104);
 sprite_change_offset("ustrong", 42, 110);
 sprite_change_offset("1dstrong", 85, 118);
 sprite_change_offset("-1dstrong", 85, 118);
-sprite_change_offset("nspecial", 58, 90);
+sprite_change_offset("nspecial", 88, 136);
 sprite_change_offset("fspecial", 148, 174);
 sprite_change_offset("fspecial_explosion", 154, 114);
 sprite_change_offset("uspecial", 56, 106);
@@ -61,9 +61,11 @@ sprite_change_offset("plat", 57, 0);
 sprite_change_offset("melon", 24, 24);
 sprite_change_offset("melon_mask", 24, 24);
 sprite_change_offset("particles", 8,8);
-sprite_change_offset("hfx_watermelon", 108, 88);
+sprite_change_offset("beheaded", 108, 88);
 
 sprite_change_offset("nspecial_proj", 64, 94);
+sprite_change_offset("stranger_nspec", 112, 134);
+sprite_change_offset("stun_trigger_vfx", 100, 100);
 
 sprite_change_offset("puddle1", 46, 0);
 sprite_change_offset("puddle2", 58, 96);

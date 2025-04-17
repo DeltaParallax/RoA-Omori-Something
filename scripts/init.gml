@@ -101,18 +101,27 @@ air_dodge_sound = asset_get("sfx_quick_dodge");
 bubble_x = 0;
 bubble_y = 8;
 
+fear_trigger = ds_map_create()
+fear_trigger[? AT_NSPECIAL] = 1
+fear_trigger[? AT_FSPECIAL] = 1
+fear_trigger[? AT_DSPECIAL] = 1
+fear_trigger[? AT_DAIR] = 1
+fear_trigger[? AT_UAIR] = 1
+fear_trigger[? AT_FSTRONG] = 1
+fear_trigger[? AT_BAIR] = 1
+fear_trigger[? AT_USTRONG] = 2
+
 vfx_dattack_sweet = hit_fx_create(sprite_get("dattack_hitfx"), 24);
-vfx_watermelon = hit_fx_create(sprite_get("hfx_watermelon"), 28);
+vfx_watermelon = hit_fx_create(sprite_get("beheaded"), 28);
 dattack_angle_difference = 0;
 dattack_active_speed = 12;
 
 particles = ds_list_create();
 
 //fspecial
-puddle = noone;
 fspecial_grabbed = []
 fspecial_vfx = hit_fx_create(sprite_get("fspecial_explosion"), 16);
 
-//uspecial
-usp_angle = 0;
-t_dist = 0;
+nspecial_obj = noone;
+
+uspecial_dir = 90;

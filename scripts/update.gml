@@ -10,10 +10,42 @@ with (hit_fx_obj)
     }
 }
 
+with oPlayer {
+    if self == other continue
+    
+    if state == PS_DEAD or state == PS_RESPAWN {
+        fear_amount = 0;
+        fear_player = noone
+    }
+    
+    if !fear_detonation_status.active continue;
+    
+    fear_detonation_status.timer = min(fear_detonation_status.timer+!hitpause, fear_detonation_status.max_time)
+    
+    if fear_detonation_status.timer == 0 and !hitpause {
+        sound_play(asset_get("sfx_absa_concentrate"))
+    }
+    
+    if fear_detonation_status.timer == fear_detonation_status.max_time {
+        fear_detonation_status.timer = -1;
+        fear_detonation_status.active = false;
+        fear_player = noone;
+        fear_amount = 0
+        
+        with other create_hitbox(AT_DSPECIAL, 4, other.x,other.y)
+    }
+}
+
 if (is_attacking())
 {
     switch (attack)
     {
+        case AT_NSPECIAL:
+            if window == 4 and window_timer == 0 and !hitpause {
+                nspecial_obj = instance_create(x+(18*spr_dir),y-6,"obj_article1")
+                nspecial_obj.spr_dir = spr_dir;
+            }
+        break;
         case AT_FSPECIAL:
             if window == 5 and window_timer % 3 == 0 and !hitpause {
                 create_hitbox(attack, 2, x, y)

@@ -36,7 +36,7 @@ set_hitbox_value(AT_UAIR, 1, HG_PRIORITY, 6);
 set_hitbox_value(AT_UAIR, 1, HG_DAMAGE, 13);
 set_hitbox_value(AT_UAIR, 1, HG_ANGLE, 90);
 set_hitbox_value(AT_UAIR, 1, HG_BASE_KNOCKBACK, 7);
-set_hitbox_value(AT_UAIR, 1, HG_KNOCKBACK_SCALING, 1.1);
+set_hitbox_value(AT_UAIR, 1, HG_KNOCKBACK_SCALING, 0.9);
 set_hitbox_value(AT_UAIR, 1, HG_BASE_HITPAUSE, 9);
 set_hitbox_value(AT_UAIR, 1, HG_HITPAUSE_SCALING, .7);
 set_hitbox_value(AT_UAIR, 1, HG_HIT_SFX, sound_get("sfx_critical_hit"));

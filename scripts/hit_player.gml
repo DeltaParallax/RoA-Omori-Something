@@ -1,6 +1,19 @@
+if (my_hitboxID.attack == AT_FSTRONG or my_hitboxID.attack == AT_USTRONG or my_hitboxID.attack == AT_DSTRONG) {
+        if hit_player_obj.fear_amount == hit_player_obj.max_fear { 
+            hit_player_obj.fear_detonation_status.active = true;
+            hit_player_obj.fear_detonation_status.timer = -20
+        }
+}
+
+var exempt = false;
 switch (my_hitboxID.attack)
 {
     case AT_USPECIAL:
+        if hit_player_obj.fear_amount == hit_player_obj.max_fear { 
+            hit_player_obj.fear_detonation_status.active = true;
+            hit_player_obj.fear_detonation_status.timer = -20
+        }
+    
         sound_play(asset_get("sfx_blow_heavy1"));
         sound_play(asset_get("sfx_ori_energyhit_medium"),false,noone,0.6,0.9);
         sound_play(asset_get("sfx_ori_energyhit_heavy"),false,noone,0.6,1.1);
@@ -19,8 +32,13 @@ switch (my_hitboxID.attack)
             sound_play(asset_get("sfx_ori_seinhit_weak"))
     break;
     case AT_FSPECIAL:
-        set_attack_value(AT_FSPECIAL, AG_NUM_WINDOWS, 5);
-        array_push(fspecial_grabbed, hit_player_obj);
+        if hit_player_obj.fear_amount == hit_player_obj.max_fear {
+            set_attack_value(AT_FSPECIAL, AG_NUM_WINDOWS, 5);
+            array_push(fspecial_grabbed, hit_player_obj);
+            hit_player_obj.fear_amount = 0
+            exempt = true
+        }
+
     break;
     case AT_DATTACK:
         if my_hitboxID.hbox_num == 1
@@ -56,36 +74,10 @@ switch (my_hitboxID.attack)
     break;
     
     case AT_NSPECIAL:
-        var i = 0;
-        repeat 5
-        {
-            var xscale = random_func( (x*2) mod 4, 10, true) mod 2 == 0 ? 1 : -1;
-            var yscale = random_func( (y*2) mod 4, 10, true) mod 2 == 0 ? 1 : -1;
-            var new_particle = {
-                frame : random_func( (x+y+i) mod 10, 3, true),
-                frame_adv : 0,
-                sprite : sprite_get("particles"),
-                angle : 0,
-                torque : 3,
-                alpha : 2,
-                alpha_decay : 0.05,
-                hsp : random_func( (x-y+i) mod 10, 12, false) - 6,
-                vsp : random_func( (y+i*2) mod 5, 9, false) - 10,
-                hsp_decay : -0.05,
-                grav : 0.4,
-                x_pos : my_hitboxID.x,
-                y_pos : my_hitboxID.y,
-                x_scale : xscale,
-                y_scale : yscale,
-                layer : 1,
-                shaded : 0
-            }
-            
-            ds_list_add(particles, new_particle);
-            i += 1;
-        }
         if my_hitboxID.hbox_num == 1
         {
+            nspecial_obj.state = PS_DEAD;
+            nspecial_obj.state_timer = 0;
             sound_play(sound_get("sfx_melon"))
         }
     break;
@@ -98,4 +90,7 @@ switch (my_hitboxID.attack)
         }
     break;
 }
-  
+if ds_map_exists(fear_trigger, my_hitboxID.attack) and fear_trigger[? my_hitboxID.attack] == my_hitboxID.hbox_num and !exempt{
+    hit_player_obj.fear_amount = min(hit_player_obj.fear_amount+1, hit_player_obj.max_fear);
+    hit_player_obj.fear_player = self;    
+}

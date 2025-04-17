@@ -37,3 +37,24 @@ set_hitbox_value(AT_DSPECIAL, 1, HG_VISUAL_EFFECT, 20);
 set_hitbox_value(AT_DSPECIAL, 1, HG_HIT_SFX, asset_get("sfx_absa_singlezap1"));
 set_hitbox_value(AT_DSPECIAL, 1, HG_ANGLE_FLIPPER, 6);
 set_hitbox_value(AT_DSPECIAL, 1, HG_TECHABLE, 1);
+
+
+
+set_hitbox_value(AT_DSPECIAL, 4, HG_HITBOX_TYPE, 2);
+set_hitbox_value(AT_DSPECIAL, 4, HG_WINDOW, -1);
+set_hitbox_value(AT_DSPECIAL, 4, HG_LIFETIME, 3);
+set_hitbox_value(AT_DSPECIAL, 4, HG_HITBOX_Y, -30);
+set_hitbox_value(AT_DSPECIAL, 4, HG_WIDTH, 90);
+set_hitbox_value(AT_DSPECIAL, 4, HG_HEIGHT, 90);
+set_hitbox_value(AT_DSPECIAL, 4, HG_PRIORITY, 1);
+set_hitbox_value(AT_DSPECIAL, 4, HG_DAMAGE, 10);
+set_hitbox_value(AT_DSPECIAL, 4, HG_BASE_KNOCKBACK, 8);
+set_hitbox_value(AT_DSPECIAL, 4, HG_KNOCKBACK_SCALING, 1);
+set_hitbox_value(AT_DSPECIAL, 4, HG_ANGLE, 90);
+set_hitbox_value(AT_DSPECIAL, 4, HG_BASE_HITPAUSE, 9);
+set_hitbox_value(AT_DSPECIAL, 4, HG_HITPAUSE_SCALING, 0.7);
+set_hitbox_value(AT_DSPECIAL, 4, HG_EXTRA_HITPAUSE, 10);
+set_hitbox_value(AT_DSPECIAL, 4, HG_HIT_SFX, asset_get("sfx_blow_heavy1"));
+set_hitbox_value(AT_DSPECIAL, 4, HG_PROJECTILE_SPRITE, asset_get("empty_sprite"));
+set_hitbox_value(AT_DSPECIAL, 4, HG_PROJECTILE_ANIM_SPEED, 0.3);
+set_hitbox_value(AT_DSPECIAL, 4, HG_PROJECTILE_MASK, -1);

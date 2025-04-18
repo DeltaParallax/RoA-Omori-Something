@@ -101,6 +101,10 @@ air_dodge_sound = asset_get("sfx_quick_dodge");
 bubble_x = 0;
 bubble_y = 8;
 
+dspecial_attack_cache = false;
+dspecial_timer = 0;
+dspecial_airdodge_threshold = 18;
+
 fear_trigger = ds_map_create()
 fear_trigger[? AT_NSPECIAL] = 1
 fear_trigger[? AT_FSPECIAL] = 1

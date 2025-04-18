@@ -54,7 +54,7 @@ sprite_change_offset("nspecial", 88, 136);
 sprite_change_offset("fspecial", 148, 174);
 sprite_change_offset("fspecial_explosion", 154, 114);
 sprite_change_offset("uspecial", 56, 106);
-sprite_change_offset("dspecial", 64, 94);
+sprite_change_offset("dspecial", 138, 176);
 sprite_change_offset("taunt", 32, 62);
 
 sprite_change_offset("plat", 57, 0);
@@ -65,6 +65,7 @@ sprite_change_offset("beheaded", 108, 88);
 
 sprite_change_offset("nspecial_proj", 64, 94);
 sprite_change_offset("stranger_nspec", 112, 134);
+sprite_change_offset("stranger_fearapplied", 112, 134);
 sprite_change_offset("stun_trigger_vfx", 100, 100);
 
 sprite_change_offset("puddle1", 46, 0);

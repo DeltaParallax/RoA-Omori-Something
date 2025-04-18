@@ -1,7 +1,7 @@
-if (my_hitboxID.attack == AT_FSTRONG or my_hitboxID.attack == AT_USTRONG or my_hitboxID.attack == AT_DSTRONG) {
+if (my_hitboxID.attack == AT_FSTRONG or my_hitboxID.attack == AT_USTRONG or my_hitboxID.attack == AT_DSTRONG or (my_hitboxID.attack == AT_DSPECIAL and my_hitboxID.hbox_num == 1)) {
         if hit_player_obj.fear_amount == hit_player_obj.max_fear { 
             hit_player_obj.fear_detonation_status.active = true;
-            hit_player_obj.fear_detonation_status.timer = -20
+            hit_player_obj.fear_detonation_status.timer = -14
         }
 }
 
@@ -28,8 +28,6 @@ switch (my_hitboxID.attack)
         if my_hitboxID.hbox_num == 4 {
             sound_play(asset_get("sfx_blow_heavy1"))
         }
-        if my_hitboxID.hbox_num == 1
-            sound_play(asset_get("sfx_ori_seinhit_weak"))
     break;
     case AT_FSPECIAL:
         if hit_player_obj.fear_amount == hit_player_obj.max_fear {

@@ -1,5 +1,9 @@
 switch (attack)
 {
+    case AT_DSPECIAL:
+        dspecial_attack_cache = false;
+         dspecial_timer=0
+    break;
     case AT_USPECIAL:
     uspecial_dir = 90;
     break;

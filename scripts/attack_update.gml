@@ -6,6 +6,60 @@ if (attack == AT_NSPECIAL || attack == AT_FSPECIAL || attack == AT_DSPECIAL || a
 //others
 switch (attack)
 {
+    case AT_DSPECIAL:
+        can_move= false;
+        switch window {
+            case 1:
+                if window_timer == 11 and !hitpause {
+                    vsp = 14
+                    if !free {
+                        window = 4;
+                        window_timer = 0;
+                    }
+                }
+                break;
+            case 2:
+                dspecial_timer++;
+                
+                if window_timer mod 3 == 1 and !hitpause{
+                    create_hitbox(AT_DSPECIAL, 2, x, y)
+                }
+                
+                if dspecial_timer >= dspecial_airdodge_threshold {
+                    can_jump = true;
+                    can_air_dodge = true
+                }
+            break;
+            case 3:
+            case 4:
+                if !dspecial_attack_cache and (is_special_pressed(DIR_ANY) or is_special_pressed(DIR_NONE)) {
+                    dspecial_attack_cache = true
+                }
+            break;
+            case 5:
+                var dir = right_down - left_down;
+                var spd = 7;
+                hsp = lerp(hsp, dir*spd, 0.05)
+                
+                if is_special_pressed(DIR_ANY) or is_special_pressed(DIR_NONE) {
+                    window ++;
+                    window_timer = 0;
+                    hsp = 0;
+                }
+                
+                if shield_pressed {
+                    window = 9;
+                    window_timer = 0
+                    hsp = 0;
+                }
+            break;
+            case 8:
+            case 9:
+                move_cooldown[AT_DSPECIAL] = 60;
+            break;
+            
+        }
+    break;
     case AT_USPECIAL:
         if ((window == 1 and window_timer > 20) or window == 2) and !joy_pad_idle{
             uspecial_dir = round(joy_dir / 45)*45

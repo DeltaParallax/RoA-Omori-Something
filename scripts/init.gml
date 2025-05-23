@@ -115,6 +115,9 @@ fear_trigger[? AT_UAIR] = 1
 fear_trigger[? AT_FSTRONG] = 1
 fear_trigger[? AT_BAIR] = 1
 fear_trigger[? AT_USTRONG] = 2
+set_victory_theme(sound_get("victory"))
+
+set_victory_bg(sprite_get("winscreen"))
 
 vfx_dattack_sweet = hit_fx_create(sprite_get("dattack_hitfx"), 24);
 vfx_watermelon = hit_fx_create(sprite_get("beheaded"), 28);

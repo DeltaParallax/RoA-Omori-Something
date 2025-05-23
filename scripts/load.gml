@@ -20,7 +20,7 @@ sprite_change_offset("something_crouch_hurtbox", 24, 26);
 sprite_change_offset("jumpstart", 20, 78);
 sprite_change_offset("jump", 22, 94);
 sprite_change_offset("doublejump", 32, 86);
-sprite_change_offset("walljump", 32, 62);
+sprite_change_offset("walljump", 24, 88);
 sprite_change_offset("pratfall", 20, 94);
 sprite_change_offset("land", 20, 90);
 sprite_change_offset("landinglag", 20,90);
@@ -29,7 +29,7 @@ sprite_change_offset("pratland", 56,80);
 sprite_change_offset("parry", 84, 92);
 sprite_change_offset("roll_forward", 30, 78);
 sprite_change_offset("roll_backward", 30, 78);
-sprite_change_offset("airdodge", 32, 62);
+sprite_change_offset("airdodge", 32, 82);
 sprite_change_offset("waveland", 48, 92);
 sprite_change_offset("tech", 32, 62);
 
@@ -54,8 +54,10 @@ sprite_change_offset("nspecial", 88, 136);
 sprite_change_offset("fspecial", 148, 174);
 sprite_change_offset("fspecial_explosion", 154, 114);
 sprite_change_offset("uspecial", 56, 106);
-sprite_change_offset("dspecial", 138, 176);
-sprite_change_offset("taunt", 32, 62);
+sprite_change_offset("dspecial", 138, 178);
+sprite_change_offset("taunt", 98, 134);
+sprite_change_offset("fear_stack", 38, 12);
+
 
 sprite_change_offset("plat", 57, 0);
 sprite_change_offset("melon", 24, 24);

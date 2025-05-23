@@ -6,10 +6,20 @@ if (attack == AT_NSPECIAL || attack == AT_FSPECIAL || attack == AT_DSPECIAL || a
 //others
 switch (attack)
 {
+    case AT_TAUNT:
+        if !taunt_down window++;
+        
+        if window_timer == 28 and !hitpause {
+            sound_play(sound_get("sfx_delta_taunt_squeak_2"))
+        }
+    break;
     case AT_DSPECIAL:
         can_move= false;
         switch window {
             case 1:
+                if window_timer == 2 {
+                    dspecial_sound = sound_play(sound_get("sfx_delta_dspecial_start"))
+                }
                 if window_timer == 11 and !hitpause {
                     vsp = 14
                     if !free {
@@ -32,6 +42,7 @@ switch (attack)
             break;
             case 3:
             case 4:
+                sound_stop(dspecial_sound)
                 if !dspecial_attack_cache and (is_special_pressed(DIR_ANY) or is_special_pressed(DIR_NONE)) {
                     dspecial_attack_cache = true
                 }
@@ -77,6 +88,11 @@ switch (attack)
             vsp *= 0.5
         }
     break;
+    case AT_DAIR:
+        if window == 1 and window_timer == 9 and !hitpause{
+            sound_play(sound_get("sfx_delta_bite"), false, noone, 0.6, 1.8)
+        }     
+    break;
     case AT_BAIR:
         if window == 1 and window_timer == 14 {
             sound_play(sound_get("sfx_spider_stab"), false, noone, 0.4, 0.9)
@@ -99,7 +115,11 @@ switch (attack)
         }
     
     break;
-    
+    case AT_UAIR:
+        if window == 1 and window_timer == 3 and !hitpause{
+            sound_play(sound_get("sfx_delta_uair_prep"), false, noone, 1, 1)
+        }    
+    break;
     case AT_DATTACK:
     can_fast_fall = window == 1;
     
@@ -130,6 +150,11 @@ switch (attack)
         if (window == 1 and window_timer == 4)
         {
             move_cooldown[AT_NSPECIAL] = 40
+        }
+    break;
+    case AT_FSTRONG:
+        if window == 2 and window_timer == 4 and !hitpause {
+            sound_play(sound_get("sfx_delta_fstrong_stab_swipe"))
         }
     break;
     

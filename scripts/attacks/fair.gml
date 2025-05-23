@@ -10,7 +10,7 @@ set_window_value(AT_FAIR, 1, AG_WINDOW_LENGTH, 10);
 set_window_value(AT_FAIR, 1, AG_WINDOW_ANIM_FRAMES, 3);
 set_window_value(AT_FAIR, 1, AG_WINDOW_VSPEED, -1);
 set_window_value(AT_FAIR, 1, AG_WINDOW_HAS_SFX, 1);
-set_window_value(AT_FAIR, 1, AG_WINDOW_SFX, asset_get("sfx_ori_uptilt_single"));
+set_window_value(AT_FAIR, 1, AG_WINDOW_SFX, sound_get("sfx_delta_fair_swipe"));
 set_window_value(AT_FAIR, 1, AG_WINDOW_SFX_FRAME, 8);
 
 set_window_value(AT_FAIR, 2, AG_WINDOW_TYPE, 1);

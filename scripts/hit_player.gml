@@ -1,7 +1,8 @@
 if (my_hitboxID.attack == AT_FSTRONG or my_hitboxID.attack == AT_USTRONG or my_hitboxID.attack == AT_DSTRONG or (my_hitboxID.attack == AT_DSPECIAL and my_hitboxID.hbox_num == 1)) {
-        if hit_player_obj.fear_amount == hit_player_obj.max_fear { 
+        if fear_amount == max_fear { 
             hit_player_obj.fear_detonation_status.active = true;
             hit_player_obj.fear_detonation_status.timer = -14
+            fear_amount = 0
         }
 }
 
@@ -9,7 +10,7 @@ var exempt = false;
 switch (my_hitboxID.attack)
 {
     case AT_USPECIAL:
-        if hit_player_obj.fear_amount == hit_player_obj.max_fear { 
+        if fear_amount == max_fear { 
             hit_player_obj.fear_detonation_status.active = true;
             hit_player_obj.fear_detonation_status.timer = -20
         }
@@ -30,10 +31,10 @@ switch (my_hitboxID.attack)
         }
     break;
     case AT_FSPECIAL:
-        if hit_player_obj.fear_amount == hit_player_obj.max_fear {
+        if fear_amount == max_fear {
             set_attack_value(AT_FSPECIAL, AG_NUM_WINDOWS, 5);
             array_push(fspecial_grabbed, hit_player_obj);
-            hit_player_obj.fear_amount = 0
+            fear_amount = 0
             exempt = true
         }
 
@@ -89,6 +90,6 @@ switch (my_hitboxID.attack)
     break;
 }
 if ds_map_exists(fear_trigger, my_hitboxID.attack) and fear_trigger[? my_hitboxID.attack] == my_hitboxID.hbox_num and !exempt{
-    hit_player_obj.fear_amount = min(hit_player_obj.fear_amount+1, hit_player_obj.max_fear);
-    hit_player_obj.fear_player = self;    
+    fear_amount = min(fear_amount+1, max_fear);
+    fear_player = self;    
 }

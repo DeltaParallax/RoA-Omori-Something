@@ -4,7 +4,7 @@ switch state {
         if state_timer == 0 and !instance_exists(hitbox) {
             hitbox = create_hitbox(AT_NSPECIAL, 1, x,y-30)
             
-            if opponent_has_full_status {
+            if something_has_full_status {
                 hitbox.damage += 2;
                 hitbox.extra_hitpause = 10;
             }
@@ -16,8 +16,8 @@ switch state {
         }
         hsp = lerp(hsp, max_speed*spr_dir, 0.1)
         
-        dir = point_direction(x, y, floor(closest_player.x), floor(closest_player.y - (closest_player.char_height / 2)));
-        vsp = lerp(vsp, lengthdir_y(4 + (2*opponent_has_full_status),dir), 0.1)
+        // dir = point_direction(x, y, floor(closest_player.x), floor(closest_player.y - (closest_player.char_height / 2)));
+        // vsp = lerp(vsp, lengthdir_y(4 + (2*opponent_has_full_status),dir), 0.1)
     break;
     case PS_DEAD:
         hsp *= 0.93;

@@ -14,8 +14,8 @@ with oPlayer {
     if self == other continue
     
     if state == PS_DEAD or state == PS_RESPAWN {
-        fear_amount = 0;
-        fear_player = noone
+        fear_detonation_status.timer = -1;
+        fear_detonation_status.active = false;
     }
     
     if !fear_detonation_status.active continue;
@@ -29,8 +29,6 @@ with oPlayer {
     if fear_detonation_status.timer == fear_detonation_status.max_time {
         fear_detonation_status.timer = -1;
         fear_detonation_status.active = false;
-        fear_player = noone;
-        fear_amount = 0
         
         with other create_hitbox(AT_DSPECIAL, 4, other.x,other.y)
     }

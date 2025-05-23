@@ -1,6 +1,4 @@
-if fear_player != other_player_id or fear_amount == 0 exit;
-
-draw_debug_text(x,y,"FEAR AMOUNT -- "+string(fear_amount))
+if !fear_detonation_status.active exit;
 
 if !fear_detonation_status.active or fear_detonation_status.timer < 0 exit;
 

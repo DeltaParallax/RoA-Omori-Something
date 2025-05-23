@@ -7,15 +7,15 @@ state_info = ds_map_create()
 
 hitbox = noone;
 
-opponent_has_full_status = false;
-with oPlayer {
-    if self == other.player_id or fear_player != other.player_id or fear_amount != max_fear continue;
+something_has_full_status = player_id.fear_amount == player_id.max_fear
+// with oPlayer {
+//     if self == other.player_id or fear_player != other.player_id or fear_amount != max_fear continue;
     
-    other.opponent_has_full_status = true
-}
+//     other.opponent_has_full_status = true
+// }
 
 
-if opponent_has_full_status {
+if something_has_full_status {
     sprite_index = sprite_get("stranger_fearapplied")
     state_info[? PS_SPAWN] = {
         length : 24,
@@ -64,6 +64,6 @@ else {
 
 max_speed = 7;
 
-player_id.x -= 20000
-closest_player = instance_nearest(x,y,asset_get("oPlayer"))
-player_id.x += 20000
+// player_id.x -= 20000
+// closest_player = instance_nearest(x,y,asset_get("oPlayer"))
+// player_id.x += 20000

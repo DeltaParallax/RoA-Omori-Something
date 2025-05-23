@@ -1,8 +1,9 @@
-if state == PS_ATTACK_GROUND && attack == AT_USTRONG && window <= 3{
+if state == PS_ATTACK_GROUND && attack == AT_USTRONG{
     shader_start();
     draw_sprite_ext(sprite_get("ustrong_back"), image_index, x, y, 1, 1, 0, c_white, 1);
     shader_end();
 }
+
 for (var i = 0; i < ds_list_size(particles); i++)
 {
     var p = particles[| i];

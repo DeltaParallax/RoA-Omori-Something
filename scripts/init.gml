@@ -34,14 +34,14 @@ leave_ground_max = 7.5; //the maximum hsp you can have when you go from grounded
 max_jump_hsp = 6; //the maximum hsp you can have when jumping from the ground
 air_max_speed = 5.5; //the maximum hsp you can accelerate to when in a normal aerial state
 jump_change = 3; //maximum hsp when double jumping. If already going faster, it will not slow you down
-air_accel = .3;
+air_accel = .25;
 prat_fall_accel = .55; //multiplier of air_accel while in pratfall
 air_friction = .04;
 max_djumps = 1;
 double_jump_time = 32; //the number of frames to play the djump animation. Can't be less than 31.
 walljump_hsp = 6;
 walljump_vsp = 10;
-walljump_time = 32;
+walljump_time = 24;
 max_fall = 9; //maximum fall speed without fastfalling
 fast_fall = 12; //fast fall speed
 gravity_speed = .325;
@@ -75,9 +75,9 @@ techroll_recovery_frames = 2;
 techroll_speed = 10;
 
 //airdodge animation frames
-air_dodge_startup_frames = 3;
-air_dodge_active_frames = 3;
-air_dodge_recovery_frames = 3;
+air_dodge_startup_frames = 2;
+air_dodge_active_frames = 2;
+air_dodge_recovery_frames = 2;
 air_dodge_speed = 8;
 
 //roll animation frames
@@ -101,6 +101,7 @@ air_dodge_sound = asset_get("sfx_quick_dodge");
 bubble_x = 0;
 bubble_y = 8;
 
+dspecial_sound = noone;
 dspecial_attack_cache = false;
 dspecial_timer = 0;
 dspecial_airdodge_threshold = 18;
@@ -129,3 +130,7 @@ fspecial_vfx = hit_fx_create(sprite_get("fspecial_explosion"), 16);
 nspecial_obj = noone;
 
 uspecial_dir = 90;
+
+
+fear_amount = 0;
+max_fear = 3;

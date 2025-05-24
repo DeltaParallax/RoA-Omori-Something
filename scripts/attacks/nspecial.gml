@@ -33,13 +33,13 @@ set_window_value(AT_NSPECIAL, 4, AG_WINDOW_ANIM_FRAME_START, 6);
 
 set_hitbox_value(AT_NSPECIAL, 1, HG_HITBOX_TYPE, 2);
 set_hitbox_value(AT_NSPECIAL, 1, HG_WINDOW, -1);
-set_hitbox_value(AT_NSPECIAL, 1, HG_LIFETIME, 100);
+set_hitbox_value(AT_NSPECIAL, 1, HG_LIFETIME, 10000);
 set_hitbox_value(AT_NSPECIAL, 1, HG_WIDTH, 40);
 set_hitbox_value(AT_NSPECIAL, 1, HG_HEIGHT, 80);
 set_hitbox_value(AT_NSPECIAL, 1, HG_PRIORITY, 3);
 set_hitbox_value(AT_NSPECIAL, 1, HG_DAMAGE, 3);
-set_hitbox_value(AT_NSPECIAL, 1, HG_ANGLE, 50);
-set_hitbox_value(AT_NSPECIAL, 1, HG_ANGLE_FLIPPER, 7)
+set_hitbox_value(AT_NSPECIAL, 1, HG_ANGLE, 60);
+set_hitbox_value(AT_NSPECIAL, 1, HG_ANGLE_FLIPPER, 0)
 set_hitbox_value(AT_NSPECIAL, 1, HG_BASE_KNOCKBACK, 8);
 set_hitbox_value(AT_NSPECIAL, 1, HG_KNOCKBACK_SCALING, 0.2);
 set_hitbox_value(AT_NSPECIAL, 1, HG_BASE_HITPAUSE, 8);
@@ -47,5 +47,8 @@ set_hitbox_value(AT_NSPECIAL, 1, HG_HITPAUSE_SCALING, 0.6);
 set_hitbox_value(AT_NSPECIAL, 1, HG_VISUAL_EFFECT,vfx_watermelon)
 set_hitbox_value(AT_NSPECIAL, 1, HG_HIT_SFX, asset_get("sfx_blow_medium2"));
 set_hitbox_value(AT_NSPECIAL, 1, HG_PROJECTILE_SPRITE, asset_get("empty_sprite"));
+set_hitbox_value(AT_NSPECIAL, 1, HG_EXTENDED_PARRY_STUN, 1);
+set_hitbox_value(AT_NSPECIAL, 1, HG_PROJECTILE_PARRY_STUN, true)
 set_hitbox_value(AT_NSPECIAL, 1, HG_PROJECTILE_ANIM_SPEED, 0.3);
 set_hitbox_value(AT_NSPECIAL, 1, HG_PROJECTILE_MASK, -1);
+set_hitbox_value(AT_NSPECIAL, 1, HG_HITSTUN_MULTIPLIER, 0.5);

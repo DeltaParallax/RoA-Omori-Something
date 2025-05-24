@@ -16,6 +16,7 @@ something_has_full_status = player_id.fear_amount == player_id.max_fear
 
 
 if something_has_full_status {
+    player_id.fear_amount = 0
     sprite_index = sprite_get("stranger_fearapplied")
     state_info[? PS_SPAWN] = {
         length : 24,

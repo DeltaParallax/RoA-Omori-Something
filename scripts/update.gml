@@ -26,6 +26,10 @@ with oPlayer {
         sound_play(asset_get("sfx_absa_concentrate"))
     }
     
+    if fear_detonation_status.timer == 3 and !hitpause {
+        sound_play(other.windup_sound, false, noone, 1.2, 1.3)
+    }
+    
     if fear_detonation_status.timer == fear_detonation_status.max_time {
         fear_detonation_status.timer = -1;
         fear_detonation_status.active = false;

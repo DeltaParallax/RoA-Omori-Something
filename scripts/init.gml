@@ -128,12 +128,14 @@ particles = ds_list_create();
 
 //fspecial
 fspecial_grabbed = []
-fspecial_vfx = hit_fx_create(sprite_get("fspecial_explosion"), 16);
+fspecial_vfx = hit_fx_create(sprite_get("fspecial_explosion"), 24);
 
 nspecial_obj = noone;
 
 uspecial_dir = 90;
 
+
+windup_sound = sound_get("sfx_delta_windup")
 
 fear_amount = 0;
 max_fear = 3;

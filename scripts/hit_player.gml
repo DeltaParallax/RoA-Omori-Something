@@ -1,4 +1,9 @@
-if (my_hitboxID.attack == AT_FSTRONG or my_hitboxID.attack == AT_USTRONG or my_hitboxID.attack == AT_DSTRONG or (my_hitboxID.attack == AT_DSPECIAL and my_hitboxID.hbox_num == 1)) {
+if ds_map_exists(fear_trigger, my_hitboxID.attack) and fear_trigger[? my_hitboxID.attack] == my_hitboxID.hbox_num and !exempt{
+    fear_amount = min(fear_amount+1, max_fear);
+    fear_player = self;    
+}
+
+if (my_hitboxID.attack == AT_FSTRONG or my_hitboxID.attack == AT_USTRONG or my_hitboxID.attack == AT_DSTRONG or (my_hitboxID.attack == AT_DSPECIAL and my_hitboxID.hbox_num == 1)) or (my_hitboxID.hbox_num == 1 and my_hitboxID.attack == AT_USPECIAL) {
         if fear_amount == max_fear { 
             hit_player_obj.fear_detonation_status.active = true;
             hit_player_obj.fear_detonation_status.timer = -14
@@ -10,10 +15,6 @@ var exempt = false;
 switch (my_hitboxID.attack)
 {
     case AT_USPECIAL:
-        if fear_amount == max_fear { 
-            hit_player_obj.fear_detonation_status.active = true;
-            hit_player_obj.fear_detonation_status.timer = -20
-        }
     
         sound_play(asset_get("sfx_blow_heavy1"));
         sound_play(asset_get("sfx_ori_energyhit_medium"),false,noone,0.6,0.9);
@@ -88,8 +89,4 @@ switch (my_hitboxID.attack)
             sound_play(sound_get("sfx_stab"))
         }
     break;
-}
-if ds_map_exists(fear_trigger, my_hitboxID.attack) and fear_trigger[? my_hitboxID.attack] == my_hitboxID.hbox_num and !exempt{
-    fear_amount = min(fear_amount+1, max_fear);
-    fear_player = self;    
 }

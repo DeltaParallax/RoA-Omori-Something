@@ -52,7 +52,7 @@ sprite_change_offset("1dstrong", 85, 118);
 sprite_change_offset("-1dstrong", 85, 118);
 sprite_change_offset("nspecial", 88, 136);
 sprite_change_offset("fspecial", 148, 174);
-sprite_change_offset("fspecial_explosion", 154, 114);
+sprite_change_offset("fspecial_explosion", 112, 102);
 sprite_change_offset("uspecial", 56, 106);
 sprite_change_offset("dspecial", 138, 178);
 sprite_change_offset("taunt", 98, 134);

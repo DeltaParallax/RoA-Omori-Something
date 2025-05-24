@@ -1,0 +1,1 @@
+fear_amount = max(0,fear_amount-1)

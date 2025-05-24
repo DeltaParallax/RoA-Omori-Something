@@ -1,18 +1,17 @@
+if x < 0 or x > room_width or y < 0 or y > room_height {
+    state = PS_DEAD
+    state_timer = 0
+}
+
 
 switch state {
     case PS_IDLE:
-        if state_timer == 0 and !instance_exists(hitbox) {
-            hitbox = create_hitbox(AT_NSPECIAL, 1, x,y-30)
-            
-            if something_has_full_status {
-                hitbox.damage += 2;
-                hitbox.extra_hitpause = 10;
-            }
-        }
-        
         if instance_exists(hitbox) {
             hitbox.x = x;
             hitbox.y = y - 30
+        } else {
+            state = PS_DEAD
+            state_timer=0
         }
         hsp = lerp(hsp, max_speed*spr_dir, 0.1)
         
@@ -34,6 +33,12 @@ if state_timer >= state_info[? state].length {
         switch state {
             case PS_SPAWN:
                 state = PS_IDLE
+                hitbox = create_hitbox(AT_NSPECIAL, 1, x,y-30)
+                if something_has_full_status {
+                    hitbox.damage += 2;
+                    hitbox.hit_flipper = 7
+                    hitbox.extra_hitpause = 15;
+                }
             break;
             case PS_DEAD:
                 instance_destroy()

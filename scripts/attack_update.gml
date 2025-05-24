@@ -21,7 +21,7 @@ switch (attack)
                     dspecial_sound = sound_play(sound_get("sfx_delta_dspecial_start"))
                 }
                 if window_timer == 11 and !hitpause {
-                    vsp = 14
+                    vsp = 16
                     if !free {
                         window = 4;
                         window_timer = 0;
@@ -147,10 +147,7 @@ switch (attack)
     break;
     
      case AT_NSPECIAL:
-        if (window == 1 and window_timer == 4)
-        {
-            move_cooldown[AT_NSPECIAL] = 40
-        }
+        move_cooldown[AT_NSPECIAL] = 40
     break;
     case AT_FSTRONG:
         if window == 2 and window_timer == 4 and !hitpause {
@@ -234,9 +231,9 @@ switch (attack)
                 }
                 
             if !hitpause and window_timer >= get_window_value(attack, window, AG_WINDOW_LENGTH) {
-                create_hitbox(attack, 3, x, y)
+                create_hitbox(attack, 3, x, y-40)
                 vsp = -7
-                spawn_hit_fx(x,y-30,fspecial_vfx)
+                spawn_hit_fx(x,y-50,fspecial_vfx)
             }
             break;
         }

@@ -1,0 +1,1 @@
+fear_amount = 0;

@@ -14,8 +14,9 @@
 
 shader_start()
 for (var f = 0; f < fear_amount; f++) {
+    var alpha = (0.2*sin( (get_gameplay_time() / 4) + (f*pi/2) )) + 0.65
     var frame = (get_gameplay_time() / 3) + 2*f
-    draw_sprite_ext(sprite_get("fear_stack"), frame, x, y-30-(20*f),1,1,0,c_white,1)
+    draw_sprite_ext(sprite_get("fear_stack"), frame, x, y-30-(20*f),1,1,0,c_white,alpha)
 }
 shader_end()
 

@@ -16,5 +16,6 @@ switch (attack)
     break;
     case AT_DSTRONG:
     set_attack_value(AT_DSTRONG, AG_SPRITE, sprite_get(string(spr_dir) + "dstrong"));
+    set_attack_value(AT_DSTRONG, AG_HURTBOX_SPRITE, sprite_get(string(spr_dir) + "dstrong_hurt"));
     break;
 }

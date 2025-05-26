@@ -75,11 +75,29 @@ switch (attack)
         if ((window == 1 and window_timer > 20) or window == 2) and !joy_pad_idle{
             uspecial_dir = round(joy_dir / 45)*45
         }
+        
+        if window == 1 and shield_down {
+            set_state(PS_PRATFALL)
+            vsp = -16;
+        }
     
-        if window == 2 and window_timer == 4 {
-            var dist = 120
-            x += lengthdir_x(dist, uspecial_dir)
-            y += lengthdir_y(dist, uspecial_dir)
+        if window == 2 and window_timer == 1 {
+            var dist = 200
+            
+            var xx = lengthdir_x(dist, uspecial_dir)
+            var yy = lengthdir_y(dist, uspecial_dir)
+            
+            var asset = asset_get("par_block")
+            
+            var separation = 0.1;
+            var i = 0;
+            do {
+                x += xx*separation
+                y += yy*separation
+                
+                i += separation
+            } until (place_meeting(x,y,asset) or i >= 1)
+            
         }
     
         if !(window == 3 and window_timer > 42) {

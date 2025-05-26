@@ -76,8 +76,8 @@ switch (my_hitboxID.attack)
     case AT_NSPECIAL:
         if my_hitboxID.hbox_num == 1
         {
-            nspecial_obj.state = PS_DEAD;
-            nspecial_obj.state_timer = 0;
+            my_hitboxID.linked_article.state = PS_DEAD;
+            my_hitboxID.linked_article.state_timer = 0;
             sound_play(sound_get("sfx_melon"))
         }
     break;

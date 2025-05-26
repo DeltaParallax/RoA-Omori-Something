@@ -3,6 +3,10 @@ update_particles()
 
 with (hit_fx_obj)
 {
+    if hit_fx == other.fspecial_vfx or hit_fx == other.vfx_dattack_sweet or hit_fx == other.fspecial_splash_vfx  {
+        depth = other.depth + 1
+    }
+    
     if (sprite_index == sprite_get("hfx_watermelon") and spr_dir == -1 and "turned" not in self)
     {
         turned = true;

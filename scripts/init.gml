@@ -129,6 +129,7 @@ particles = ds_list_create();
 //fspecial
 fspecial_grabbed = []
 fspecial_vfx = hit_fx_create(sprite_get("fspecial_explosion"), 24);
+fspecial_splash_vfx = hit_fx_create(sprite_get("fspecial_hit_splash"), 28);
 
 nspecial_obj = noone;
 

@@ -70,6 +70,7 @@ set_hitbox_value(AT_FSPECIAL, 1, HG_EXTRA_HITPAUSE, 15);
 set_hitbox_value(AT_FSPECIAL, 1, HG_HIT_SFX, asset_get("sfx_ori_energyhit_medium"));
 set_hitbox_value(AT_FSPECIAL, 1, HG_HITBOX_GROUP, -1);
 set_hitbox_value(AT_FSPECIAL, 1, HG_HITSTUN_MULTIPLIER, 1);
+set_hitbox_value(AT_FSPECIAL, 1, HG_VISUAL_EFFECT, fspecial_splash_vfx)
 
 set_hitbox_value(AT_FSPECIAL, 2, HG_WINDOW, -1);
 set_hitbox_value(AT_FSPECIAL, 2, HG_LIFETIME, 3);

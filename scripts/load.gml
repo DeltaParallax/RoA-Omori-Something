@@ -31,7 +31,7 @@ sprite_change_offset("roll_forward", 30, 78);
 sprite_change_offset("roll_backward", 30, 78);
 sprite_change_offset("airdodge", 32, 82);
 sprite_change_offset("waveland", 48, 92);
-sprite_change_offset("tech", 32, 62);
+sprite_change_offset("tech", 46, 84);
 
 sprite_change_offset("dattack_hitfx", 100, 100);
 sprite_change_offset("hit_particle1", 10, 18);
@@ -52,6 +52,7 @@ sprite_change_offset("1dstrong", 85, 118);
 sprite_change_offset("-1dstrong", 85, 118);
 sprite_change_offset("nspecial", 88, 136);
 sprite_change_offset("fspecial", 148, 174);
+sprite_change_offset("fspecial_hit_splash", 68, 38);
 sprite_change_offset("fspecial_explosion", 112, 102);
 sprite_change_offset("uspecial", 56, 106);
 sprite_change_offset("dspecial", 138, 178);

@@ -1,6 +1,10 @@
 if x < 0 or x > room_width or y < 0 or y > room_height {
     state = PS_DEAD
     state_timer = 0
+    
+    if instance_exists(hitbox) {
+        instance_destroy(hitbox)
+    }
 }
 
 
@@ -34,6 +38,7 @@ if state_timer >= state_info[? state].length {
             case PS_SPAWN:
                 state = PS_IDLE
                 hitbox = create_hitbox(AT_NSPECIAL, 1, x,y-30)
+                hitbox.linked_article = self
                 if something_has_full_status {
                     hitbox.damage += 2;
                     hitbox.hit_flipper = 7

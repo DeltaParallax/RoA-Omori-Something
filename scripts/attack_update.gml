@@ -137,6 +137,10 @@ switch (attack)
         if window == 1 and window_timer == 3 and !hitpause{
             sound_play(sound_get("sfx_delta_uair_prep"), false, noone, 1, 1)
         }    
+        if (window == 1 and window_timer > 9) or window == 2 or (window == 3 and window_timer < 10) {
+            hud_offset = round(lerp(hud_offset, 450, 0.1))
+        }
+    
     break;
     case AT_DATTACK:
     can_fast_fall = window == 1;
@@ -171,32 +175,6 @@ switch (attack)
         if window == 2 and window_timer == 4 and !hitpause {
             sound_play(sound_get("sfx_delta_fstrong_stab_swipe"))
         }
-    break;
-    
-    case AT_USTRONG:
-    if window == 3 && window_timer == 8{
-        var new_particle = {
-            frame : 5,
-            frame_adv : 1/5,
-            sprite : sprite_get("ustrong_back"),
-            angle : 0,
-            torque : 0,
-            alpha : 1,
-            alpha_decay : 0,
-            hsp : 0,
-            vsp : 0,
-            hsp_decay : 0,
-            grav : 0,
-            x_pos : x,
-            y_pos : y,
-            x_scale : 1,
-            y_scale : 1,
-            layer : -1,
-            shaded : 1
-        }
-        
-        ds_list_add(particles, new_particle);
-    }
     break;
     
     case AT_FSPECIAL:
@@ -258,6 +236,33 @@ switch (attack)
         
     break;
     case AT_USTRONG:
+    if window == 2 or window == 3 or (window == 4 and window_timer < 8) {
+        hud_offset = round(lerp(hud_offset, 450, 0.1))
+    }
+    
+    if window == 3 && window_timer == 8{
+        var new_particle = {
+            frame : 5,
+            frame_adv : 1/5,
+            sprite : sprite_get("ustrong_back"),
+            angle : 0,
+            torque : 0,
+            alpha : 1,
+            alpha_decay : 0,
+            hsp : 0,
+            vsp : 0,
+            hsp_decay : 0,
+            grav : 0,
+            x_pos : x,
+            y_pos : y,
+            x_scale : 1,
+            y_scale : 1,
+            layer : -1,
+            shaded : 1
+        }
+        
+        ds_list_add(particles, new_particle);
+    }
         if window == 2 and window_timer == 1 {
             sound_play(sound_get("sfx_ustrong_stab"), false, noone, 0.4, 1.2)
             sound_play(asset_get("sfx_frog_ustrong"), false, noone, 0.6, 0.95)

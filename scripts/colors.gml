@@ -35,7 +35,7 @@ set_color_profile_slot_range( 7, 10, 23, 13 );
 
 
 // ALTERNATE COLORS
-set_num_palettes( 8 );
+set_num_palettes( 9 );
 
 // Phobias of the past
 set_color_profile_slot( 1, 0, 255, 255, 255 ); //outline
@@ -106,6 +106,17 @@ set_color_profile_slot( 7, 4, 23, 224, 235 ); //eye highlight
 set_color_profile_slot( 7, 5, 64, 105, 255 ); //eye shadow
 set_color_profile_slot( 7, 6, 255, 255, 255 ); //pupil
 set_color_profile_slot( 7, 7, 107, 116, 135 ); //unnamed color row
+
+// Planktonic Evil
+set_color_profile_slot( 8, 0, 178, 213, 184 ); //unnamed color row
+set_color_profile_slot( 8, 1, 171, 208, 177 ); //unnamed color row
+set_color_profile_slot( 8, 2, 138, 178, 145 ); //unnamed color row
+set_color_profile_slot( 8, 3, 80, 163, 94 ); //unnamed color row
+set_color_profile_slot( 8, 4, 233, 252, 136 ); //unnamed color row
+set_color_profile_slot( 8, 5, 192, 214, 78 ); //unnamed color row
+set_color_profile_slot( 8, 6, 228, 43, 5 ); //unnamed color row
+set_color_profile_slot( 8, 7, 150, 70, 54 ); //unnamed color row 
+
 
 
 /* This is a comment used by that one RoA colors.gml generator tool to store palette data. You can safely keep it in your colors.gml if you plan to re-use the tool later, or safely remove it if you don't.

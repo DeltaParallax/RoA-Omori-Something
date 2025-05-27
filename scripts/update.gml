@@ -1,6 +1,23 @@
 //MINI attack_update to include the case window_timer = 0;
 update_particles()
 
+// gravity jump djump protection
+if (grav_jump) {
+    grav_jump = 0;
+    if (fast_falling && djumps > 0) { 
+        djumps -= 1;  
+        sound_stop(asset_get("sfx_absa_jump"))
+        sound_play(asset_get("sfx_absa_jump"), 0, noone, 1, 1.2)
+    }
+}
+if state == PS_DOUBLE_JUMP {
+    if (check_fast_fall && djumps > 0) // for plat drop
+    || (fast_falling && vsp == fast_fall) { // for mid-air
+        grav_jump = 1;
+    }
+}
+
+
 with (hit_fx_obj)
 {
     if hit_fx == other.fspecial_vfx or hit_fx == other.vfx_dattack_sweet or hit_fx == other.fspecial_splash_vfx  {

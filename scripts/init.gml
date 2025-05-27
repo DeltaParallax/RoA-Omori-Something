@@ -131,6 +131,7 @@ fspecial_grabbed = []
 fspecial_vfx = hit_fx_create(sprite_get("fspecial_explosion"), 24);
 fspecial_splash_vfx = hit_fx_create(sprite_get("fspecial_hit_splash"), 28);
 
+grav_jump = 0
 nspecial_obj = noone;
 
 uspecial_dir = 90;
